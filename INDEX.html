@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Porcada · Procesos Operativos · Jets Privados · Takyma Investment Pioneer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --color-bg:#0c0c0d;
+    --color-surface:rgba(22,22,26,0.85);
+    --color-surface-light:rgba(31,31,36,0.95);
+    --color-primary:#d4b483;
+    --color-primary-bright:#e8cf9e;
+    --color-eco:#8f9b77;
+    --color-sec:#a07c7c;
+    --color-text:#f5f5f5;
+    --color-text-muted:#9a9a9a;
+    --color-border:rgba(255,255,255,0.08);
+    --font-serif:'Cormorant Garamond',serif;
+    --font-sans:'Montserrat',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+    font-family:var(--font-sans);
+    background:#000;
+    color:var(--color-text);
+    line-height:1.6;
+    font-weight:300;
+    font-size:16px;
+    overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:var(--font-serif);color:var(--color-text);line-height:1.25;letter-spacing:.01em;font-weight:500}
+h1{font-size:2.6rem}
+h2{font-size:2rem;margin-bottom:.6em;text-transform:uppercase;letter-spacing:3px}
+h3{font-size:1.35rem;margin-bottom:.4em;color:var(--color-primary-bright);text-transform:uppercase;letter-spacing:2px}
+h4{font-size:1.05rem;color:var(--color-text);font-weight:500;text-transform:uppercase;letter-spacing:1.5px}
+p{margin-bottom:1em}
+a{color:var(--color-primary-bright);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 1em 1.4em}
+li{margin-bottom:.5em}
+strong{color:var(--color-primary-bright);font-weight:500}
+code{background:rgba(255,255,255,0.04);padding:.15em .4em;border-radius:2px;font-family:'Montserrat',monospace;font-size:.9em;color:var(--color-primary-bright)}
+
+/* === TOP BAR === */
+.top-bar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(12,12,13,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--color-border);
+    padding:.8rem 2rem;
+}
+.top-bar .wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.top-bar .brand{display:flex;align-items:center;gap:.8rem}
+.top-bar .brand .logo-mark{max-height:42px;max-width:160px;object-fit:contain;filter:brightness(1.2) drop-shadow(0 0 12px rgba(212,180,131,0.15))}
+.top-bar .brand .divider{width:1px;height:30px;background:var(--color-border)}
+.top-bar .brand .brand-text{font-family:var(--font-serif);color:var(--color-primary-bright);font-size:1.1rem;font-weight:500;letter-spacing:2px;text-transform:uppercase}
+.top-bar nav ul{list-style:none;display:flex;gap:1.6rem;margin:0}
+.top-bar nav ul li a{color:var(--color-text-muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;font-weight:500;transition:color .3s}
+.top-bar nav ul li a:hover{color:var(--color-primary-bright);text-decoration:none}
+.top-bar .actions{display:flex;gap:.6rem}
+.lang-btn{
+    background:rgba(22,22,26,0.6);
+    border:1px solid var(--color-primary);
+    color:var(--color-primary);
+    padding:8px 18px;
+    font-family:var(--font-sans);
+    font-weight:500;
+    cursor:pointer;
+    border-radius:50px;
+    transition:all .4s ease;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.72rem;
+    backdrop-filter:blur(8px);
+}
+.lang-btn:hover{
+    background:var(--color-primary);
+    color:#0c0c0d;
+    box-shadow:0 4px 15px rgba(212,180,131,0.3);
+}
+@media(max-width:980px){.top-bar nav{display:none}}
+
+/* === HERO === */
+.hero{
+    padding:5rem 2rem 4rem;
+    background:radial-gradient(ellipse at top, rgba(212,180,131,0.04) 0%, transparent 60%), #0c0c0d;
+    border-bottom:1px solid var(--color-border);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+.hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:radial-gradient(ellipse at center,rgba(212,180,131,0.06) 0%,transparent 70%);
+    pointer-events:none;
+}
+.hero .wrap{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.hero .hero-logo{
+    max-height:120px;max-width:280px;object-fit:contain;
+    margin:0 auto 2rem;display:block;
+    filter:brightness(1.3) drop-shadow(0 0 24px rgba(212,180,131,0.2));
+    opacity:0;
+    animation:fadeInUp 1s ease .2s both;
+}
+.hero .eyebrow{color:var(--color-primary);font-size:.8rem;letter-spacing:.5em;text-transform:uppercase;margin-bottom:1.2rem;font-weight:500}
+.hero h1{
+    font-family:var(--font-serif);
+    font-size:3.2rem;margin-bottom:1.2rem;
+    text-transform:uppercase;letter-spacing:4px;
+    text-shadow:0 4px 15px rgba(0,0,0,0.9);
+    animation:fadeInUp 1s ease .4s both;
+}
+.hero h1 .accent{color:var(--color-primary-bright);font-style:italic}
+.hero .sub{
+    font-size:1.05rem;color:var(--color-text-muted);max-width:780px;margin:0 auto 2rem;
+    font-weight:300;line-height:1.7;
+    animation:fadeInUp 1s ease .6s both;
+}
+.hero .meta{
+    display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2.5rem;
+    animation:fadeInUp 1s ease .8s both;
+}
+.hero .meta .item{
+    border-left:1px solid var(--color-primary);
+    padding-left:1.2rem;text-align:left;
+}
+.hero .meta .item .k{font-size:.7rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.2em;margin-bottom:.3rem}
+.hero .meta .item .v{font-size:.95rem;color:var(--color-text);font-family:var(--font-serif);font-weight:500;letter-spacing:1px}
+
+/* === SECTIONS === */
+section{padding:4.5rem 2rem;border-bottom:1px solid var(--color-border);position:relative}
+section .wrap{max-width:1200px;margin:0 auto}
+section .lead{font-size:1rem;color:var(--color-text-muted);margin-bottom:2rem;max-width:860px;line-height:1.75}
+
+/* === CARDS GRID === */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem;margin:2rem 0}
+.card{
+    background:var(--color-surface);
+    backdrop-filter:blur(12px);
+    border:1px solid var(--color-border);
+    padding:1.8rem 1.5rem;
+    border-radius:2px;
+    transition:all .4s ease;
+    position:relative;
+    overflow:hidden;
+}
+.card::after{
+    content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;
+    background:var(--color-primary);
+    transform:scaleX(0);transform-origin:left;
+    transition:transform .4s ease;
+}
+.card:hover{
+    background:var(--color-surface-light);
+    border-color:rgba(212,180,131,0.3);
+    box-shadow:0 15px 30px rgba(0,0,0,0.4);
+    transform:translateY(-5px);
+}
+.card:hover::after{transform:scaleX(1)}
+.card .num{font-family:var(--font-serif);font-size:2.6rem;color:var(--color-primary);font-weight:500;line-height:1;margin-bottom:.6rem}
+.card .tag{display:inline-block;background:rgba(212,180,131,0.08);color:var(--color-primary-bright);padding:.2em .8em;border-radius:2px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;font-weight:600;border:1px solid rgba(212,180,131,0.2)}
+.card p{font-size:.92rem;color:var(--color-text-muted);line-height:1.6}
+.card ul{margin-left:1.2em;font-size:.88rem;color:var(--color-text-muted)}
+.card .cost{margin-top:1.2rem;padding-top:1rem;border-top:1px dashed var(--color-border);font-size:.82rem;color:var(--color-text-muted)}
+
+/* === TIMELINE === */
+.timeline{position:relative;margin:2.5rem 0;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:.5rem;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--color-primary) 0%,var(--color-border) 100%)}
+.tl-item{position:relative;margin-bottom:2rem;padding-left:2.2rem;animation:fadeInUp .5s ease both}
+.tl-item::before{
+    content:'';position:absolute;left:-1.6rem;top:.55rem;
+    width:14px;height:14px;border-radius:50%;
+    background:var(--color-primary);
+    box-shadow:0 0 0 4px rgba(212,180,131,0.2);
+}
+.tl-item.done::before{background:var(--color-eco);box-shadow:0 0 0 4px rgba(143,155,119,0.2)}
+.tl-item .time{display:inline-block;background:rgba(212,180,131,0.08);padding:.2em .9em;border-radius:2px;font-size:.7rem;color:var(--color-primary-bright);font-weight:600;letter-spacing:.18em;margin-bottom:.5rem;border:1px solid rgba(212,180,131,0.25);text-transform:uppercase}
+.tl-item .tl-head{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-bottom:.4rem}
+.tl-item h4{font-size:1.1rem;color:var(--color-text);margin:0;text-transform:none;letter-spacing:1px}
+.tl-item .actor{display:inline-block;background:rgba(143,155,119,0.08);color:var(--color-eco);padding:.1em .7em;border-radius:2px;font-size:.7rem;letter-spacing:.08em;border:1px solid rgba(143,155,119,0.2);text-transform:uppercase;font-weight:500}
+.tl-item p{font-size:.92rem;color:var(--color-text-muted)}
+.tl-item .docs{list-style:none;margin:.5rem 0 0;padding:0}
+.tl-item .docs li{font-size:.85rem;color:var(--color-text-muted);padding:.2em 0 .2em 1.4em;position:relative}
+.tl-item .docs li::before{content:'◆';position:absolute;left:0;color:var(--color-primary);font-size:.65em;top:.5em}
+
+/* === CASE COMPARISON === */
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+@media(max-width:900px){.cases{grid-template-columns:1fr}}
+.case{
+    background:var(--color-surface);
+    border:1px solid var(--color-border);
+    border-top:2px solid var(--color-primary);
+    border-radius:2px;
+    overflow:hidden;
+    transition:all .4s ease;
+}
+.case:hover{border-top-color:var(--color-primary-bright);box-shadow:0 15px 30px rgba(0,0,0,0.4)}
+.case .hd{padding:1.5rem 1.5rem .8rem;background:linear-gradient(180deg,rgba(212,180,131,0.05),transparent)}
+.case .hd .city{font-family:var(--font-serif);font-size:1.7rem;color:var(--color-text);font-weight:500;display:flex;align-items:center;gap:.7rem;letter-spacing:2px;text-transform:uppercase}
+.case .hd .city .flag{font-size:1.5rem}
+.case .hd .meta{font-size:.8rem;color:var(--color-text-muted);margin-top:.3rem;letter-spacing:1px;text-transform:uppercase}
+.case .bd{padding:1.5rem}
+.case .phase{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px dashed var(--color-border)}
+.case .phase:last-child{border-bottom:0;padding-bottom:0;margin-bottom:0}
+.case .phase .ph-tag{display:inline-block;background:var(--color-primary);color:#0c0c0d;padding:.15em .65em;border-radius:2px;font-size:.68rem;letter-spacing:.15em;font-weight:700;margin-bottom:.4rem;text-transform:uppercase}
+.case .phase h4{font-size:1rem;margin-bottom:.4rem;text-transform:none;letter-spacing:.5px;color:var(--color-primary-bright)}
+.case .phase p{font-size:.9rem;color:var(--color-text-muted);margin:0 0 .5em}
+.case .phase ul{margin:.4rem 0 0 1.2em;font-size:.88rem;color:var(--color-text-muted)}
+
+/* === TABLES === */
+table.cmp{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--color-surface);
+    border-radius:2px;
+    overflow:hidden;
+    margin:2rem 0;
+    font-size:.9rem;
+    border:1px solid var(--color-border);
+}
+table.cmp th,table.cmp td{padding:.85rem 1rem;text-align:left;border-bottom:1px solid var(--color-border)}
+table.cmp th{background:rgba(212,180,131,0.05);color:var(--color-primary-bright);font-weight:500;text-transform:uppercase;font-size:.72rem;letter-spacing:.18em;border-bottom:1px solid var(--color-primary)}
+table.cmp td{color:var(--color-text-muted)}
+table.cmp td strong{color:var(--color-text)}
+table.cmp tr:last-child td{border-bottom:0}
+table.cmp tr:hover td{background:rgba(212,180,131,0.03)}
+table.cost-table th,table.cost-table td{font-size:.88rem}
+table.cost-table .num{text-align:right;font-variant-numeric:tabular-nums;color:var(--color-primary-bright);font-weight:500}
+
+/* === GANTT === */
+.gantt{margin:2rem 0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:2px;padding:1.5rem;overflow-x:auto}
+.gantt-row{display:grid;grid-template-columns:200px 1fr;gap:1rem;align-items:center;padding:.5rem 0;border-bottom:1px dashed var(--color-border)}
+.gantt-row:last-child{border-bottom:0}
+.gantt-label{font-size:.85rem;color:var(--color-text);font-weight:500;letter-spacing:.5px}
+.gantt-bar-wrap{position:relative;height:28px;background:rgba(0,0,0,0.4);border-radius:2px;overflow:hidden}
+.gantt-bar{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,var(--color-primary),var(--color-primary-bright));border-radius:2px;display:flex;align-items:center;padding:0 .7rem;font-size:.72rem;color:#0c0c0d;font-weight:600;white-space:nowrap;letter-spacing:1px;text-transform:uppercase}
+.gantt-bar.alt{background:linear-gradient(90deg,var(--color-eco),#b3bd9c);color:#0c0c0d}
+.gantt-bar.fin{background:linear-gradient(90deg,var(--color-sec),#c9a09a);color:#0c0c0d}
+
+/* === CONTACTS === */
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:2rem 0}
+.contact{background:var(--color-surface);border:1px solid var(--color-border);border-radius:2px;padding:1.2rem;transition:all .3s}
+.contact:hover{border-color:rgba(212,180,131,0.3);transform:translateY(-2px)}
+.contact .org{color:var(--color-primary-bright);font-weight:600;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem}
+.contact .role{font-size:1rem;color:var(--color-text);margin-bottom:.4rem;font-weight:500;font-family:var(--font-serif);letter-spacing:1px}
+.contact .fn{font-size:.82rem;color:var(--color-text-muted);line-height:1.5}
+
+/* === CALLOUT === */
+.callout{
+    background:linear-gradient(135deg,rgba(212,180,131,0.05),transparent);
+    border-left:2px solid var(--color-primary);
+    padding:1.4rem 1.6rem;
+    border-radius:0 2px 2px 0;
+    margin:1.8rem 0;
+}
+.callout.warn{background:linear-gradient(135deg,rgba(160,124,124,0.06),transparent);border-left-color:var(--color-sec)}
+.callout.eco{background:linear-gradient(135deg,rgba(143,155,119,0.06),transparent);border-left-color:var(--color-eco)}
+.callout h4{margin-bottom:.4rem;color:var(--color-primary-bright);text-transform:uppercase;letter-spacing:2px;font-size:.85rem}
+.callout.warn h4{color:var(--color-sec)}
+.callout.eco h4{color:var(--color-eco)}
+.callout p{margin:0;color:var(--color-text-muted);font-size:.92rem;line-height:1.7}
+
+/* === FOOTER === */
+footer{
+    padding:3rem 2rem 2rem;
+    background:linear-gradient(180deg,#0c0c0d 0%,#000 100%);
+    border-top:1px solid var(--color-border);
+    text-align:center;
+}
+footer .wrap{max-width:1200px;margin:0 auto}
+footer .eco-logo{max-height:60px;max-width:200px;object-fit:contain;margin:0 auto 1.5rem;display:block;filter:brightness(1.2) drop-shadow(0 4px 15px rgba(0,0,0,0.8))}
+footer .sig{
+    font-family:var(--font-serif);
+    color:var(--color-primary-bright);
+    font-size:1.1rem;margin-bottom:.5rem;
+    letter-spacing:3px;text-transform:uppercase;font-weight:500;
+}
+footer .tagline{color:var(--color-text-muted);font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:1.5rem}
+footer .copyright{
+    color:var(--color-text-muted);font-size:.78rem;
+    padding-top:1.5rem;border-top:1px solid var(--color-border);
+    margin-top:1.5rem;
+    letter-spacing:1px;
+}
+footer .copyright strong{color:var(--color-primary-bright);font-weight:500}
+
+/* === ANIMATIONS === */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+section .wrap{animation:fadeIn .8s ease-out both}
+
+/* === BADGE === */
+.badge{display:inline-block;background:transparent;color:var(--color-primary-bright);padding:.15em .55em;border-radius:2px;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;margin-left:.5rem;vertical-align:middle;border:1px solid var(--color-primary)}
+
+/* Mobile adjustments */
+@media(max-width:768px){
+    .top-bar .wrap{flex-direction:column;gap:.8rem}
+    .hero h1{font-size:2.2rem;letter-spacing:2px}
+    section{padding:3rem 1.2rem}
+    h2{font-size:1.6rem;letter-spacing:2px}
+    .gantt-row{grid-template-columns:1fr;gap:.3rem}
+    .gantt-label{font-size:.78rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="top-bar">
+    <div class="wrap">
+        <div class="brand">
+            <img src="images/LOGO.PNG" alt="Takyma Investment Pioneer" class="logo-mark" onerror="this.style.display='none'">
+            <div class="divider"></div>
+            <div class="brand-text" data-es="La Porcada" data-en="La Porcada">La Porcada</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#marco" data-es="Marco" data-en="Framework">Marco</a></li>
+                <li><a href="#modelos" data-es="Modelos" data-en="Models">Modelos</a></li>
+                <li><a href="#san-petersburgo" data-es="San Petersburgo" data-en="St. Petersburg">San Petersburgo</a></li>
+                <li><a href="#hong-kong" data-es="Hong Kong" data-en="Hong Kong">Hong Kong</a></li>
+                <li><a href="#comparativa" data-es="Comparativa" data-en="Comparison">Comparativa</a></li>
+                <li><a href="#aduana" data-es="Aduana Isla" data-en="Island Customs">Aduana Isla</a></li>
+                <li><a href="#cronograma" data-es="Cronograma" data-en="Timeline">Cronograma</a></li>
+                <li><a href="#contactos" data-es="Contactos" data-en="Contacts">Contactos</a></li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">🌐 English</button>
+        </div>
+    </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+    <div class="wrap">
+        <img src="images/LOGO.PNG" alt="Takyma Investment Pioneer" class="hero-logo" onerror="this.style.display='none'">
+        <div class="eyebrow" data-es="Documento Operativo · Versión 1.0" data-en="Operational Document · Version 1.0">Documento Operativo · Versión 1.0</div>
+        <h1><span data-es="Pista Privada de" data-en="Private">Pista Privada de</span> <span class="accent" data-es="Jets" data-en="Jets">Jets</span><br><span data-es="Procesos de Recepción Internacional" data-en="International Reception Processes">Procesos de Recepción Internacional</span></h1>
+        <p class="sub" data-es="Itinerarios operativos completos para la recepción de jets privados provenientes de San Petersburgo y Hong Kong, incluyendo el diseño, habilitación y operación de una aduana privada en la isla para 5–6 huéspedes VIP exclusivos." data-en="Complete operational itineraries for the reception of private jets from Saint Petersburg and Hong Kong, including the design, enablement and operation of a private customs facility on the island for 5–6 exclusive VIP guests.">Itinerarios operativos completos para la recepción de jets privados provenientes de San Petersburgo y Hong Kong, incluyendo el diseño, habilitación y operación de una aduana privada en la isla para 5–6 huéspedes VIP exclusivos.</p>
+        <div class="meta">
+            <div class="item"><div class="k" data-es="Modelo" data-en="Model">Modelo</div><div class="v" data-es="Marina · Villa · Airstrip" data-en="Marina · Villa · Airstrip">Marina · Villa · Airstrip</div></div>
+            <div class="item"><div class="k" data-es="Capacidad" data-en="Capacity">Capacidad</div><div class="v" data-es="5–6 jets simultáneos" data-en="5–6 simultaneous jets">5–6 jets simultáneos</div></div>
+            <div class="item"><div class="k" data-es="Marco Legal" data-en="Legal Framework">Marco Legal</div><div class="v" data-es="Decreto 4/2025 + AAC + ANA" data-en="Decree 4/2025 + AAC + ANA">Decreto 4/2025 + AAC + ANA</div></div>
+            <div class="item"><div class="k" data-es="Segmento" data-en="Segment">Segmento</div><div class="v" data-es="HNWI · UHNWI Global" data-en="HNWI · UHNWI Global">HNWI · UHNWI Global</div></div>
+        </div>
+    </div>
+</header>
+
+<!-- ============ MARCO NORMATIVO ============ -->
+<section id="marco">
+    <div class="wrap">
+        <h2 data-es="Marco Normativo Aplicable" data-en="Regulatory Framework">Marco Normativo Aplicable</h2>
+        <p class="lead" data-es="La operación de una pista privada con recepción internacional de jets en Panamá se rige por una triada regulatoria: la Autoridad Aeronáutica Civil (AAC) para lo aeronáutico, la Autoridad Nacional de Aduanas (ANA) para el control fronterizo, y el Decreto Ejecutivo No. 4 de 11 de febrero de 2025 que reglamenta el Turismo Náutico y expresa el respaldo gubernamental a la habilitación de instalaciones privadas con presencia de autoridades del Estado." data-en="The operation of a private runway with international jet reception in Panama is governed by a regulatory triad: the Civil Aeronautics Authority (AAC) for aeronautics, the National Customs Authority (ANA) for border control, and Executive Decree No. 4 of February 11, 2025, which regulates Nautical Tourism and expresses the government's backing for enabling private facilities with the presence of state authorities.">La operación de una pista privada con recepción internacional de jets en Panamá se rige por una triada regulatoria: la Autoridad Aeronáutica Civil (AAC) para lo aeronáutico, la Autoridad Nacional de Aduanas (ANA) para el control fronterizo, y el Decreto Ejecutivo No. 4 de 11 de febrero de 2025 que reglamenta el Turismo Náutico y expresa el respaldo gubernamental a la habilitación de instalaciones privadas con presencia de autoridades del Estado.</p>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="tag" data-es="Aviación" data-en="Aviation">Aviación</div>
+                <h3 data-es="AAC · Autoridad Aeronáutica Civil" data-en="AAC · Civil Aeronautics Authority">AAC · Autoridad Aeronáutica Civil</h3>
+                <p data-es="Otorga la habilitación operacional de la pista, la certificación del operador, los permisos de vuelo y autoriza aeródromos internacionales privados." data-en="Grants operational clearance for the runway, operator certification, flight permits and authorizes private international aerodromes.">Otorga la habilitación operacional de la pista, la certificación del operador, los permisos de vuelo y autoriza aeródromos internacionales privados.</p>
+                <ul>
+                    <li data-es="Decreto Ley 22/2006 (RAC)" data-en="Decree-Law 22/2006 (RAC)">Decreto Ley 22/2006 (RAC)</li>
+                    <li data-es="Resolución AAC No. 02-2020 (operación aeródromos)" data-en="AAC Resolution No. 02-2020 (aerodrome operations)">Resolución AAC No. 02-2020 (operación aeródromos)</li>
+                    <li data-es="AC 120-91 (Operadores Privados)" data-en="AC 120-91 (Private Operators)">AC 120-91 (Operadores Privados)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="tag" data-es="Frontera" data-en="Border">Frontera</div>
+                <h3 data-es="ANA · Aduanas + Migración" data-en="ANA · Customs + Immigration">ANA · Aduanas + Migración</h3>
+                <p data-es="Control de paso de frontera. Define cuáles aeropuertos son puntos habilitados de entrada/salida. Aprueba (o no) tu pista como puesto aduanero." data-en="Border crossing control. Defines which airports are authorized entry/exit points. Approves (or not) your runway as a customs post.">Control de paso de frontera. Define cuáles aeropuertos son puntos habilitados de entrada/salida. Aprueba (o no) tu pista como puesto aduanero.</p>
+                <ul>
+                    <li data-es="Ley 8/2020 (Rección ANA)" data-en="Law 8/2020 (ANA Governance)">Ley 8/2020 (Rección ANA)</li>
+                    <li data-es="Decreto 521 (Visas)" data-en="Decree 521 (Visas)">Decreto 521 (Visa)</li>
+                    <li data-es="Acuerdo ANA-Migración para FBOs privados" data-en="ANA-Immigration Agreement for private FBOs">Acuerdo ANA-Migración para FBOs privados</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="tag" data-es="Turismo" data-en="Tourism">Turismo</div>
+                <h3 data-es="Decreto Ejecutivo 4/2025" data-en="Executive Decree 4/2025">Decreto Ejecutivo 4/2025</h3>
+                <p data-es="Reglamenta el Turismo Náutico y, por extensión interpretativa, obliga a las instalaciones turísticas a disponer de espacios para instituciones del Estado para agilizar trámites a navegantes y tripulaciones." data-en="Regulates Nautical Tourism and, by interpretive extension, requires tourist facilities to provide spaces for state institutions to streamline procedures for navigators and crew.">Reglamenta el Turismo Náutico y, por extensión interpretativa, obliga a las instalaciones turísticas a disponer de espacios para instituciones del Estado para agilizar trámites a navegantes y tripulaciones.</p>
+                <ul>
+                    <li data-es="Ventanilla Única de Registro" data-en="Single Registration Window">Ventanilla Única de Registro</li>
+                    <li data-es="Beneficios fiscales para marinas/atracaderos" data-en="Tax benefits for marinas/docks">Beneficios fiscales para marinas/atracaderos</li>
+                    <li data-es="Coordinación ATP + AMP + AAC" data-en="Coordination ATP + AMP + AAC">Coordinación ATP + AMP + AAC</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="callout">
+            <h4 data-es="Aeropuertos internacionales habilitados en Panamá" data-en="International airports authorized in Panama">Aeropuertos internacionales habilitados en Panamá</h4>
+            <p data-es="Tocumen (PTY/MPTO) — Hub principal, FBO: Signature Aviation + MAPIEX · Panamá Pacífico / Howard (MPHO) — antigua base USAF, ideal para jets privados · Enrique Malek (MPDA, David) — Chiriquí · Río Hato (MPSM) — Coclé, en precalificación · Albrook (MPMG) — nacional/doméstico principal." data-en="Tocumen (PTY/MPTO) — main hub, FBO: Signature Aviation + MAPIEX · Panamá Pacífico / Howard (MPHO) — former USAF base, ideal for private jets · Enrique Malek (MPDA, David) — Chiriquí · Río Hato (MPSM) — Coclé, in pre-qualification · Albrook (MPMG) — main domestic.">Tocumen (PTY/MPTO) — Hub principal, FBO: Signature Aviation + MAPIEX · Panamá Pacífico / Howard (MPHO) — antigua base USAF, ideal para jets privados · Enrique Malek (MPDA, David) — Chiriquí · Río Hato (MPSM) — Coclé, en precalificación · Albrook (MPMG) — nacional/doméstico principal.</p>
+        </div>
+
+        <div class="callout warn">
+            <h4 data-es="Realidad crítica" data-en="Critical Reality">Realidad crítica</h4>
+            <p data-es="Tu isla no puede operar hoy como aeropuerto internacional por sí sola. Para que un jet privado ruso o chino aterrice directo en tu pista y los pasajeros entren legalmente al país, debes tramitar la habilitación de la pista como Puesto de Control Fronterizo Auxiliar o coordinar cada llegada como vuelo charter internacional autorizado con despacho en aeropuerto habilitado. Ambos caminos son viables; te detallo los tres modelos operativos abajo." data-en="Your island cannot operate today as a self-contained international airport. For a Russian or Chinese private jet to land directly on your runway and passengers to legally enter the country, you must process the runway's clearance as an Auxiliary Border Control Post, or coordinate each arrival as an authorized international charter flight with dispatch at an authorized airport. Both paths are viable; the three operational models are detailed below.">Tu isla no puede operar hoy como aeropuerto internacional por sí sola. Para que un jet privado ruso o chino aterrice directo en tu pista y los pasajeros entren legalmente al país, debes tramitar la habilitación de la pista como Puesto de Control Fronterizo Auxiliar o coordinar cada llegada como vuelo charter internacional autorizado con despacho en aeropuerto habilitado. Ambos caminos son viables; te detallo los tres modelos operativos abajo.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ MODELOS OPERATIVOS ============ -->
+<section id="modelos">
+    <div class="wrap">
+        <h2 data-es="Tres Modelos Operativos Viables" data-en="Three Viable Operational Models">Tres Modelos Operativos Viables</h2>
+        <p class="lead" data-es="Antes de definir el itinerario, conviene elegir el modelo operativo. Los tres son compatibles entre sí y pueden implementarse en fases secuenciales: empieza con el Modelo A (rápido, bajo capex), escala al B (mediano plazo), y llega al C (largo plazo, premium total)." data-en="Before defining the itinerary, it's worth choosing the operational model. All three are mutually compatible and can be implemented in sequential phases: start with Model A (fast, low capex), scale to B (medium term), and reach C (long term, total premium).">Antes de definir el itinerario, conviene elegir el modelo operativo. Los tres son compatibles entre sí y pueden implementarse en fases secuenciales: empieza con el Modelo A (rápido, bajo capex), escala al B (mediano plazo), y llega al C (largo plazo, premium total).</p>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="num">A</div>
+                <div class="tag" data-es="Fase 0–6 meses" data-en="Phase 0–6 months">Fase 0–6 meses</div>
+                <h3 data-es="Hub + Helicóptero" data-en="Hub + Helicopter">Hub + Helicóptero</h3>
+                <p data-es="El jet aterriza en Panamá Pacífico (Howard) o Tocumen, hace despacho aduanero formal en FBO (Signature o MAPIEX), y el huésped se traslada a la isla en helicóptero privado (~30–45 min)." data-en="The jet lands at Panamá Pacífico (Howard) or Tocumen, completes formal customs dispatch at the FBO (Signature or MAPIEX), and the guest is transferred to the island by private helicopter (~30–45 min).">El jet aterriza en Panamá Pacífico (Howard) o Tocumen, hace despacho aduanero formal en FBO (Signature o MAPIEX), y el huésped se traslada a la isla en helicóptero privado (~30–45 min).</p>
+                <ul>
+                    <li data-es="Cero capex en pista internacional" data-en="Zero capex on international runway">Cero capex en pista internacional</li>
+                    <li data-es="Operativo desde el día 1" data-en="Operational from day 1">Operativo desde el día 1</li>
+                    <li data-es="Experiencia VIP estándar industry" data-en="Industry-standard VIP experience">Experiencia VIP estándar industry</li>
+                </ul>
+                <div class="cost" data-es="Costo: $0 capex · Opex $50k–$80k/año (handling FBO + heli)" data-en="Cost: $0 capex · Opex $50k–$80k/year (FBO handling + heli)">Costo: $0 capex · Opex $50k–$80k/año (handling FBO + heli)</div>
+            </div>
+
+            <div class="card">
+                <div class="num">B</div>
+                <div class="tag" data-es="Fase 6–18 meses" data-en="Phase 6–18 months">Fase 6–18 meses</div>
+                <h3 data-es="Ad-hoc Internacional" data-en="Ad-hoc International">Ad-hoc Internacional</h3>
+                <p><span class="badge" data-es="RECOMENDADO" data-en="RECOMMENDED">RECOMENDADO</span></p>
+                <p data-es="Pista privada con autorización de vuelo charter internacional caso por caso. Cada llegada requiere aviso 48–72h previas; ANA envía oficiales ad hoc; costos recurrentes pero controlados." data-en="Private runway with case-by-case international charter flight authorization. Each arrival requires 48–72h advance notice; ANA sends ad hoc officers; recurring but controlled costs.">Pista privada con autorización de vuelo charter internacional caso por caso. Cada llegada requiere aviso 48–72h previas; ANA envía oficiales ad hoc; costos recurrentes pero controlados.</p>
+                <ul>
+                    <li data-es="Jet aterriza DIRECTO en la isla" data-en="Jet lands DIRECTLY on the island">Jet aterriza DIRECTO en la isla</li>
+                    <li data-es="Despacho aduanal in situ en cada llegada" data-en="On-site customs dispatch for each arrival">Despacho aduanal in situ en cada llegada</li>
+                    <li data-es="Experiencia directo a villa = premium" data-en="Direct-to-villa experience = premium">Experiencia directo a villa = premium</li>
+                </ul>
+                <div class="cost" data-es="Capex: $80k–$150k · Opex $100k–$200k/año" data-en="Capex: $80k–$150k · Opex $100k–$200k/year">Capex: $80k–$150k · Opex $100k–$200k/año</div>
+            </div>
+
+            <div class="card">
+                <div class="num">C</div>
+                <div class="tag" data-es="Fase 18–36 meses" data-en="Phase 18–36 months">Fase 18–36 meses</div>
+                <h3 data-es="Aeródromo Internacional Privado" data-en="Private International Aerodrome">Aeródromo Internacional Privado</h3>
+                <p data-es="Habilitación permanente como Puesto Fronterizo Auxiliar. Oficiales de Aduana, Migración y Sanidad destacados o on-call permanente. Llegadas sin preaviso extendido." data-en="Permanent clearance as Auxiliary Border Post. Customs, Immigration and Health officers posted or on permanent on-call. Arrivals without extended advance notice.">Habilitación permanente como Puesto Fronterizo Auxiliar. Oficiales de Aduana, Migración y Sanidad destacados o on-call permanente. Llegadas sin preaviso extendido.</p>
+                <ul>
+                    <li data-es="Operación 24/7/365 sin restricciones" data-en="24/7/365 operation without restrictions">Operación 24/7/365 sin restricciones</li>
+                    <li data-es="Máximo USP de marketing: aduanas propia" data-en="Maximum marketing USP: own customs">Máximo USP de marketing: aduanas propia</li>
+                    <li data-es="Trámite 18–24 meses ante ANA + AAC + Migración" data-en="18–24 month process before ANA + AAC + Immigration">Trámite 18–24 meses ante ANA + AAC + Migración</li>
+                </ul>
+                <div class="cost" data-es="Capex: $350k–$600k · Opex $250k–$400k/año" data-en="Capex: $350k–$600k · Opex $250k–$400k/year">Capex: $350k–$600k · Opex $250k–$400k/año</div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <h4 data-es="Recomendación operativa" data-en="Operational Recommendation">Recomendación operativa</h4>
+            <p data-es="Para un proyecto de 5–6 villas exclusivas, arrancar con Modelo A inmediato + iniciar trámite de Modelo B en paralelo es la jugada óptima. El Modelo B te da el premium directo a villa en menos de 18 meses, sin asumir el costo fijo del Modelo C. El Modelo C solo se justifica si escalas a 15+ llegadas/año o quieres posicionamiento de marca como única pista privada internacional en el Caribe panameño." data-en="For a project of 5–6 exclusive villas, starting with immediate Model A + parallel processing of Model B is the optimal play. Model B delivers the direct-to-villa premium in under 18 months, without assuming the fixed cost of Model C. Model C is only justified if scaling to 15+ arrivals/year or seeking brand positioning as the only private international runway in the Panamanian Caribbean.">Para un proyecto de 5–6 villas exclusivas, arrancar con Modelo A inmediato + iniciar trámite de Modelo B en paralelo es la jugada óptima. El Modelo B te da el premium directo a villa en menos de 18 meses, sin asumir el costo fijo del Modelo C. El Modelo C solo se justifica si escalas a 15+ llegadas/año o quieres posicionamiento de marca como única pista privada internacional en el Caribe panameño.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SAN PETROBURGO ============ -->
+<section id="san-petersburgo">
+    <div class="wrap">
+        <h2 data-es="Caso 1 · San Petersburgo → La Porcada" data-en="Case 1 · St. Petersburg → La Porcada">Caso 1 · San Petersburgo → La Porcada</h2>
+        <p class="lead" data-es="Itinerario completo para un jet privado tipo Gulfstream G650ER o Bombardier Global 7500 (eslora típica del segmento UHNWI ruso), con origen en el Aeropuerto Pulkovo (LED/ULLI), San Petersburgo, Rusia, destino final la pista privada de la isla." data-en="Full itinerary for a private jet like the Gulfstream G650ER or Bombardier Global 7500 (typical UHNWI Russian segment), originating at Pulkovo Airport (LED/ULLI), Saint Petersburg, Russia, with final destination the island's private runway.">Itinerario completo para un jet privado tipo Gulfstream G650ER o Bombardier Global 7500 (eslora típica del segmento UHNWI ruso), con origen en el Aeropuerto Pulkovo (LED/ULLI), San Petersburgo, Rusia, destino final la pista privada de la isla.</p>
+
+        <div class="cases">
+            <div class="case">
+                <div class="hd">
+                    <div class="city"><span class="flag">🇷🇺</span> <span data-es="San Petersburgo (LED)" data-en="St. Petersburg (LED)">San Petersburgo (LED)</span></div>
+                    <div class="meta" data-es="Pulkovo Airport · Origen · GMT+3" data-en="Pulkovo Airport · Origin · GMT+3">Pulkovo Airport · Origen · GMT+3</div>
+                </div>
+                <div class="bd">
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="T-30 DÍAS" data-en="T-30 DAYS">T-30 DÍAS</div>
+                        <h4 data-es="Pre-planificación y KYC" data-en="Pre-planning and KYC">Pre-planificación y KYC</h4>
+                        <p data-es="El propietario (owner) contacta al operador de vuelo panameño designado (FBO de Panamá Pacífico o Signature en Tocumen) y al gestor legal marítimo-aéreo en Panamá." data-en="The owner contacts the designated Panamanian flight operator (FBO at Panamá Pacífico or Signature at Tocumen) and the maritime-legal manager in Panama.">El propietario (owner) contacta al operador de vuelo panameño designado (FBO de Panamá Pacífico o Signature en Tocumen) y al gestor legal marítimo-aéreo en Panamá.</p>
+                        <ul>
+                            <li data-es="KYC / Due Diligence obligatorio: verificación contra listas OFAC, UE, UK HM Treasury, OFSI (Rusia post-2022). Owner debe aportar origen de fondos." data-en="KYC / Due Diligence mandatory: verification against OFAC, EU, UK HM Treasury, OFSI lists (Russia post-2022). Owner must provide source of funds.">KYC / Due Diligence obligatorio: verificación contra listas OFAC, UE, UK HM Treasury, OFSI (Rusia post-2022). Owner debe aportar origen de fondos.</li>
+                            <li data-es="Verificación de propiedad beneficiaria del jet (BO disclosure)." data-en="Verification of beneficial ownership of the jet (BO disclosure).">Verificación de propiedad beneficiaria del jet (BO disclosure).</li>
+                            <li data-es="Si el owner figura en listas restrictivas → vuelo bloqueado (no aterrizaje en Panamá)." data-en="If the owner appears on restrictive lists → flight blocked (no landing in Panama).">Si el owner figura en listas restrictivas → vuelo bloqueado (no aterrizaje en Panamá).</li>
+                            <li data-es="Owner con visa USA / Schengen / UK vigente → exención visa Panamá (Dec. 521). Sin visa vigente → tramitar visa stamped en consulado panameño en Moscú." data-en="Owner with valid USA / Schengen / UK visa → Panama visa exemption (Dec. 521). Without valid visa → process stamped visa at Panamanian consulate in Moscow.">Owner con visa USA / Schengen / UK vigente → exención visa Panamá (Dec. 521). Sin visa vigente → tramitar visa stamped en consulado panameño en Moscú.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="T-15 DÍAS" data-en="T-15 DAYS">T-15 DÍAS</div>
+                        <h4 data-es="Permisos de sobrevuelo + Landing" data-en="Overflight + Landing permits">Permisos de sobrevuelo + Landing</h4>
+                        <p data-es="El operador (o handling agent) gestiona los overflight permits y landing permits de cada FIR sobrevolada. Ruta típica post-sanciones:" data-en="The operator (or handling agent) manages the overflight permits and landing permits for each FIR overflown. Typical post-sanctions route:">El operador (o handling agent) gestiona los overflight permits y landing permits de cada FIR sobrevolada. Ruta típica post-sanciones:</p>
+                        <ul>
+                            <li data-es="Ruta Sur (recomendada): LED → Estambul (LTFM) → El Cairo → Casablanca → Lisboa → Tocumen / Panamá Pacífico" data-en="Southern route (recommended): LED → Istanbul (LTFM) → Cairo → Casablanca → Lisbon → Tocumen / Panamá Pacífico">Ruta Sur (recomendada): LED → Estambul (LTFM) → El Cairo → Casablanca → Lisboa → Tocumen / Panamá Pacífico</li>
+                            <li data-es="Ruta Atlántica Norte: evita UE por restricción sobrevuelo RU. Más larga." data-en="North Atlantic route: avoids EU due to Russia overflight restriction. Longer.">Ruta Atlántica Norte: evita UE por restricción sobrevuelo RU. Más larga.</li>
+                            <li data-es="Tiempo total: 13–16 horas con 1 escala técnica (repostaje)." data-en="Total time: 13–16 hours with 1 technical stop (refueling).">Tiempo total: 13–16 horas con 1 escala técnica (repostaje).</li>
+                            <li data-es="Permisos FIR: Turkey CAA, Egypt CAA, Morocco CAA, Portugal NAV Portugal, Santa Maria Oceanic, Panamá AAC." data-en="FIR permits: Turkey CAA, Egypt CAA, Morocco CAA, Portugal NAV Portugal, Santa Maria Oceanic, Panama AAC.">Permisos FIR: Turkey CAA, Egypt CAA, Morocco CAA, Portugal NAV Portugal, Santa Maria Oceanic, Panamá AAC.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="T-72 HORAS" data-en="T-72 HOURS">T-72 HORAS</div>
+                        <h4 data-es="eAPIS + Pre-aviso Panamá" data-en="eAPIS + Panama pre-notice">eAPIS + Pre-aviso Panamá</h4>
+                        <p data-es="Envío de manifiesto electrónico de pasajeros y tripulación a las autoridades panameñas:" data-en="Sending electronic manifest of passengers and crew to Panamanian authorities:">Envío de manifiesto electrónico de pasajeros y tripulación a las autoridades panameñas:</p>
+                        <ul>
+                            <li data-es="ANA / Aduanas: manifiesto de pasajeros + carga + bonded stores (alcohol, tabaco, regalos de alto valor)." data-en="ANA / Customs: passenger manifest + cargo + bonded stores (alcohol, tobacco, high-value gifts).">ANA / Aduanas: manifiesto de pasajeros + carga + bonded stores (alcohol, tabaco, regalos de alto valor).</li>
+                            <li data-es="Migración: lista nominal con pasaportes, fechas nacimiento, ocupación." data-en="Immigration: nominal list with passports, birth dates, occupation.">Migración: lista nominal con pasaportes, fechas nacimiento, ocupación.</li>
+                            <li data-es="AAC: plan de vuelo + reserva slot + permiso de aterrizaje." data-en="AAC: flight plan + slot reservation + landing permit.">AAC: plan de vuelo + reserva slot + permiso de aterrizaje.</li>
+                            <li data-es="Ministerio de Salud: declaración sanitaria general (GMF)." data-en="Ministry of Health: general maritime health declaration (GMF).">Ministerio de Salud: declaración sanitaria general (GMF).</li>
+                            <li data-es="Capitanía de Puerto / Migración si el huésped también trae yate (escenario combinado)." data-en="Port Authority / Immigration if the guest also brings a yacht (combined scenario).">Capitanía de Puerto / Migración si el huésped también trae yate (escenario combinado).</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="T-24 HORAS" data-en="T-24 HOURS">T-24 HORAS</div>
+                        <h4 data-es="Cierre de plan de vuelo" data-en="Flight plan closure">Cierre de plan de vuelo</h4>
+                        <p data-es="Presentación final FPL ICAO + confirmación handling + confirmación slot aterrizaje isla (Modelo B/C) o aeropuerto habilitado (Modelo A)." data-en="Final FPL ICAO submission + handling confirmation + island landing slot confirmation (Model B/C) or authorized airport (Model A).">Presentación final FPL ICAO + confirmación handling + confirmación slot aterrizaje isla (Modelo B/C) o aeropuerto habilitado (Modelo A).</p>
+                        <ul>
+                            <li data-es="Confirmación catering VIP (comida kosher, halal, vegetariana según preferencia owner)." data-en="VIP catering confirmation (kosher, halal, vegetarian per owner preference).">Confirmación catering VIP (comida kosher, halal, vegetariana según preferencia owner).</li>
+                            <li data-es="Transporte terrestre/marítimo sincronizado al arribo." data-en="Land/sea transport synchronized to arrival.">Transporte terrestre/marítimo sincronizado al arribo.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="case">
+                <div class="hd">
+                    <div class="city"><span class="flag">🇵🇦</span> <span data-es="Isla La Porcada" data-en="Isla La Porcada">Isla La Porcada</span></div>
+                    <div class="meta" data-es="Pista Privada · Destino · GMT-5" data-en="Private Runway · Destination · GMT-5">Pista Privada · Destino · GMT-5</div>
+                </div>
+                <div class="bd">
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="D-DÍA · LLEGADA" data-en="D-DAY · ARRIVAL">D-DÍA · LLEGADA</div>
+                        <h4 data-es="Aterrizaje y Despacho Aduanal" data-en="Landing and Customs Dispatch">Aterrizaje y Despacho Aduanal</h4>
+                        <p data-es="Modelo A: aterrizaje en Panamá Pacífico (Howard), FBO Signature. Despacho formal aduana/migración/sanidad en el FBO. Traslado a isla en helicóptero privado (AgustaWestland AW139 o similar)." data-en="Model A: landing at Panamá Pacífico (Howard), FBO Signature. Formal customs/immigration/health dispatch at the FBO. Transfer to island by private helicopter (AgustaWestland AW139 or similar)."><strong>Modelo A:</strong> aterrizaje en Panamá Pacífico (Howard), FBO Signature. Despacho formal aduana/migración/sanidad en el FBO. Traslado a isla en helicóptero privado (AgustaWestland AW139 o similar).</p>
+                        <p data-es="Modelo B: aterrizaje directo en la isla. Oficiales de ANA + Migración destacados el día, despacho in situ en el FBO privado de la pista. Duración del trámite: 30–45 min." data-en="Model B: direct landing on the island. ANA + Immigration officers posted that day, on-site dispatch at the runway's private FBO. Processing time: 30–45 min."><strong>Modelo B:</strong> aterrizaje directo en la isla. Oficiales de ANA + Migración destacados el día, despacho in situ en el FBO privado de la pista. Duración del trámite: 30–45 min.</p>
+                        <p data-es="Modelo C: aterrizaje directo, oficiales permanentes en sitio, despacho en 15–20 min." data-en="Model C: direct landing, permanent officers on-site, dispatch in 15–20 min."><strong>Modelo C:</strong> aterrizaje directo, oficiales permanentes en sitio, despacho en 15–20 min.</p>
+                        <ul>
+                            <li data-es="Sellado de pasaportes (entrada oficial a Panamá)." data-en="Passport stamping (official entry to Panama).">Sellado de pasaportes (entrada oficial a Panamá).</li>
+                            <li data-es="Sellado de bonded stores (alcohol/tabaco quedan sellados a bordo)." data-en="Sealing of bonded stores (alcohol/tobacco remains sealed on board).">Sellado de bonded stores (alcohol/tabaco quedan sellados a bordo).</li>
+                            <li data-es="Pago de tarifa de aterrizaje AAC (~$200–$1,200 según MTOW)." data-en="Payment of AAC landing fee (~$200–$1,200 depending on MTOW).">Pago de tarifa de aterrizaje AAC (~$200–$1,200 según MTOW).</li>
+                            <li data-es="Manifiesto cerrado y archivado." data-en="Manifest closed and filed.">Manifiesto cerrado y archivado.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="D-DÍA · TRANSFER" data-en="D-DAY · TRANSFER">D-DÍA · TRANSFER</div>
+                        <h4 data-es="Recepción VIP en la pista" data-en="VIP reception at the runway">Recepción VIP en la pista</h4>
+                        <p data-es="Bajada del jet, transfer direct a la villa en buggy eléctrico (Modelo B/C) o embarque en helicóptero (Modelo A). No hay exposición a pasajeros comerciales, no hay prensa, no hay colas." data-en="Disembarking from the jet, direct transfer to the villa by electric buggy (Model B/C) or helicopter boarding (Model A). No exposure to commercial passengers, no press, no queues.">Bajada del jet, transfer direct a la villa en buggy eléctrico (Modelo B/C) o embarque en helicóptero (Modelo A). No hay exposición a pasajeros comerciales, no hay prensa, no hay colas.</p>
+                        <ul>
+                            <li data-es="Conserje privado bilingüe ruso-inglés-español." data-en="Bilingual private concierge Russian-English-Spanish.">Conserje privado bilingüe ruso-inglés-español.</li>
+                            <li data-es="Welcome kit: SIM local, frutas, champagne Krug / Dom Pérignon enfriado." data-en="Welcome kit: local SIM, fruits, chilled Krug / Dom Pérignon champagne.">Welcome kit: SIM local, frutas, champagne Krug / Dom Pérignon enfriado.</li>
+                            <li data-es="Seguridad privada armada (típicamente ex-militares)." data-en="Armed private security (typically ex-military).">Seguridad privada armada (típicamente ex-militares).</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="ESTADÍA" data-en="STAY">ESTADÍA</div>
+                        <h4 data-es="Permanencia del owner" data-en="Owner's stay">Permanencia del owner</h4>
+                        <p data-es="El owner puede permanecer en Panamá hasta 90 días como turista prorrogables a 180 días (Dec. 521). Si tiene visa USA/UE/UK vigente, entrada sin visa. Si supera 180 días debe gestionar residencia (Panamá ofrece varias: Pensionado, Inversionista, Friendly Nations)." data-en="The owner may stay in Panama up to 90 days as a tourist, renewable to 180 days (Dec. 521). If holding valid USA/EU/UK visa, entry without visa. If exceeding 180 days must manage residency (Panama offers several: Pensionado, Investor, Friendly Nations).">El owner puede permanecer en Panamá hasta 90 días como turista prorrogables a 180 días (Dec. 521). Si tiene visa USA/UE/UK vigente, entrada sin visa. Si supera 180 días debe gestionar residencia (Panamá ofrece varias: Pensionado, Inversionista, Friendly Nations).</p>
+                        <ul>
+                            <li data-es="Jet queda en hangar o estacionado en plataforma." data-en="Jet remains in hangar or parked on the apron.">Jet queda en hangar o estacionado en plataforma.</li>
+                            <li data-es="Combustible Jet-A1 duty-free vía ANA (régimen aeronáutico)." data-en="Duty-free Jet-A1 fuel via ANA (aviation regime).">Combustible Jet-A1 duty-free vía ANA (régimen aeronáutico).</li>
+                            <li data-es="Mantenimiento programado (cambio aceite, ITV) coordinado con técnico local." data-en="Scheduled maintenance (oil change, ITV) coordinated with local technician.">Mantenimiento programado (cambio aceite, ITV) coordinado con técnico local.</li>
+                            <li data-es="Tripulación alojada en villa-staff o traslada a hotel 5★ en ciudad." data-en="Crew housed in villa-staff or transferred to 5★ hotel in the city.">Tripulación alojada en villa-staff o traslada a hotel 5★ en ciudad.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="SALIDA" data-en="DEPARTURE">SALIDA</div>
+                        <h4 data-es="Pre-aviso y zarpe internacional" data-en="Pre-notice and international departure">Pre-aviso y zarpe internacional</h4>
+                        <p data-es="Aviso 48h antes al handling agent para reservar slot + preparar manifiesto de salida. Cierre de bonded stores (lo sellado al entrar debe consumirse a bordo o re-exportarse)." data-en="Notice 48h before to the handling agent to reserve slot + prepare departure manifest. Closure of bonded stores (what was sealed upon entry must be consumed on board or re-exported).">Aviso 48h antes al handling agent para reservar slot + preparar manifiesto de salida. Cierre de bonded stores (lo sellado al entrar debe consumirse a bordo o re-exportarse).</p>
+                        <ul>
+                            <li data-es="Sellado de salida en pasaportes." data-en="Departure stamp in passports.">Sellado de salida en pasaportes.</li>
+                            <li data-es="Cierre de manifiesto ANA." data-en="Closure of ANA manifest.">Cierre de manifiesto ANA.</li>
+                            <li data-es="Tarifa AAC de salida." data-en="AAC departure fee.">Tarifa AAC de salida.</li>
+                            <li data-es="FPL ICAO de salida + permisos FIR de retorno." data-en="ICAO departure FPL + return FIR permits.">FPL ICAO de salida + permisos FIR de retorno.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="callout warn">
+            <h4 data-es="⚠ Punto crítico específico para owners rusos" data-en="⚠ Specific critical point for Russian owners">⚠ Punto crítico específico para owners rusos</h4>
+            <p data-es="Desde febrero 2022, la UE cerró su espacio aéreo a aeronaves rusas. El jet privado ruso NO puede sobrevolar UE. Por eso la ruta obligada es la Sur (Turquía-Mediterráneo-Norte África-Atlántico-Panamá). Esto añade ~3-4 horas vs ruta polar directa. Confirma siempre que el operador del jet tiene los permisos de sobrevuelo actuales — algunos países cambian listas mensualmente." data-en="Since February 2022, the EU closed its airspace to Russian aircraft. The Russian private jet CANNOT overfly the EU. Therefore the mandatory route is the Southern one (Turkey-Mediterranean-North Africa-Atlantic-Panama). This adds ~3-4 hours vs direct polar route. Always confirm the jet operator has current overflight permits — some countries change lists monthly.">Desde febrero 2022, la UE cerró su espacio aéreo a aeronaves rusas. El jet privado ruso NO puede sobrevolar UE. Por eso la ruta obligada es la Sur (Turquía-Mediterráneo-Norte África-Atlántico-Panamá). Esto añade ~3-4 horas vs ruta polar directa. Confirma siempre que el operador del jet tiene los permisos de sobrevuelo actuales — algunos países cambian listas mensualmente.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ HONG KONG ============ -->
+<section id="hong-kong">
+    <div class="wrap">
+        <h2 data-es="Caso 2 · Hong Kong → La Porcada" data-en="Case 2 · Hong Kong → La Porcada">Caso 2 · Hong Kong → La Porcada</h2>
+        <p class="lead" data-es="Itinerario completo para un jet privado tipo Bombardier Global 7500 o Gulfstream G700, con origen en el Aeropuerto Internacional Chek Lap Kok (HKG/VHHH), Hong Kong SAR, destino final la pista privada de la isla." data-en="Full itinerary for a private jet like the Bombardier Global 7500 or Gulfstream G700, originating at Hong Kong International Airport Chek Lap Kok (HKG/VHHH), Hong Kong SAR, with final destination the island's private runway.">Itinerario completo para un jet privado tipo Bombardier Global 7500 o Gulfstream G700, con origen en el Aeropuerto Internacional Chek Lap Kok (HKG/VHHH), Hong Kong SAR, destino final la pista privada de la isla.</p>
+
+        <div class="cases">
+            <div class="case">
+                <div class="hd">
+                    <div class="city"><span class="flag">🇭🇰</span> <span data-es="Hong Kong (HKG)" data-en="Hong Kong (HKG)">Hong Kong (HKG)</span></div>
+                    <div class="meta" data-es="Chek Lap Kok · Origen · GMT+8" data-en="Chek Lap Kok · Origin · GMT+8">Chek Lap Kok · Origen · GMT+8</div>
+                </div>
+                <div class="bd">
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="T-30 DÍAS" data-en="T-30 DAYS">T-30 DÍAS</div>
+                        <h4 data-es="Pre-planificación y KYC" data-en="Pre-planning and KYC">Pre-planificación y KYC</h4>
+                        <p data-es="El propietario contacta al handling agent panameño y al estudio legal. KYC y due diligence del owner, especialmente si es ciudadano de la RPC (no HKSAR): verificación contra listas OFAC, EU, US Commerce Entity List, US Treasury SDN." data-en="The owner contacts the Panamanian handling agent and law firm. KYC and due diligence of the owner, especially if citizen of the PRC (not HKSAR): verification against OFAC, EU, US Commerce Entity List, US Treasury SDN lists.">El propietario contacta al handling agent panameño y al estudio legal. KYC y due diligence del owner, especialmente si es ciudadano de la RPC (no HKSAR): verificación contra listas OFAC, EU, US Commerce Entity List, US Treasury SDN.</p>
+                        <ul>
+                            <li data-es="Owner con pasaporte HKSAR → visado libre a Panamá hasta 90 días (está en lista favorecida)." data-en="Owner with HKSAR passport → visa-free to Panama up to 90 days (on the favored list).">Owner con pasaporte HKSAR → visado libre a Panamá hasta 90 días (está en lista favorecida).</li>
+                            <li data-es="Owner con pasaporte RPC → necesita visa stamped panameña, tramitada en consulado en Beijing o HK. ~3-4 semanas." data-en="Owner with PRC passport → requires Panamanian stamped visa, processed at consulate in Beijing or HK. ~3-4 weeks.">Owner con pasaporte RPC → necesita visa stamped panameña, tramitada en consulado en Beijing o HK. ~3-4 semanas.</li>
+                            <li data-es="Verificación propiedad beneficiaria + origen fondos." data-en="Verification of beneficial ownership + source of funds.">Verificación propiedad beneficiaria + origen fondos.</li>
+                            <li data-es="Revisión contractual del jet (bandera, registro B-Hong Kong / V-RPC)." data-en="Contractual review of the jet (flag, B-Hong Kong / V-RPC registration).">Revisión contractual del jet (bandera, registro B-Hong Kong / V-RPC).</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="T-15 DÍAS" data-en="T-15 DAYS">T-15 DÍAS</div>
+                        <h4 data-es="Permisos de sobrevuelo + Landing" data-en="Overflight + Landing permits">Permisos de sobrevuelo + Landing</h4>
+                        <p data-es="El operador gestiona overflight + landing permits. Rutas viables:" data-en="The operator manages overflight + landing permits. Viable routes:">El operador gestiona overflight + landing permits. Rutas viables:</p>
+                        <ul>
+                            <li data-es="Ruta Pacífico Norte (recomendada): HKG → Anchorage (PANC) → Honolulu (PHNL) → Panamá Pacífico. ~16-18h con 1-2 escalas técnicas." data-en="North Pacific route (recommended): HKG → Anchorage (PANC) → Honolulu (PHNL) → Panamá Pacífico. ~16-18h with 1-2 technical stops.">Ruta Pacífico Norte (recomendada): HKG → Anchorage (PANC) → Honolulu (PHNL) → Panamá Pacífico. ~16-18h con 1-2 escalas técnicas.</li>
+                            <li data-es="Ruta Atlántica (solo si bloqueada ruta Pacífico): HKG → Dubai → Estambul → Lisboa → Panamá. ~22-25h, 2 escalas." data-en="Atlantic route (only if Pacific route blocked): HKG → Dubai → Istanbul → Lisbon → Panama. ~22-25h, 2 stops.">Ruta Atlántica (solo si bloqueada ruta Pacífico): HKG → Dubai → Estambul → Lisboa → Panamá. ~22-25h, 2 escalas.</li>
+                            <li data-es="Permisos FIR: China (si sobrevuela), Japón, EE.UU. (FAA), Canadá (si pasa por Anchorage), EE.UU. (Honolulu), Panamá AAC." data-en="FIR permits: China (if overflown), Japan, USA (FAA), Canada (if via Anchorage), USA (Honolulu), Panama AAC.">Permisos FIR: China (si sobrevuela), Japón, EE.UU. (FAA), Canadá (si pasa por Anchorage), EE.UU. (Honolulu), Panamá AAC.</li>
+                            <li data-es="Atención: FAA overflight permit para aeronaves no-US requiere 48-72h." data-en="Note: FAA overflight permit for non-US aircraft requires 48-72h.">Atención: FAA overflight permit para aeronaves no-US requiere 48-72h.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="T-72 HORAS" data-en="T-72 HOURS">T-72 HORAS</div>
+                        <h4 data-es="eAPIS + Pre-aviso Panamá" data-en="eAPIS + Panama pre-notice">eAPIS + Pre-aviso Panamá</h4>
+                        <p data-es="Manifiesto electrónico a ANA, Migración, AAC, Ministerio de Salud. Igual que para SPb." data-en="Electronic manifest to ANA, Immigration, AAC, Ministry of Health. Same as for LED.">Manifiesto electrónico a ANA, Migración, AAC, Ministerio de Salud. Igual que para SPb.</p>
+                        <ul>
+                            <li data-es="Lista pasajeros con pasaportes HKSAR / RPC." data-en="Passenger list with HKSAR / PRC passports.">Lista pasajeros con pasaportes HKSAR / RPC.</li>
+                            <li data-es="Catering chino halal / vegetariano / cantonés según preferencia." data-en="Chinese halal / vegetarian / Cantonese catering per preference.">Catering chino halal / vegetariano / cantonés según preferencia.</li>
+                            <li data-es="Bonded stores: té premium, licor, regalos (atención con marfil, jade, productos CITES)." data-en="Bonded stores: premium tea, liquor, gifts (attention to ivory, jade, CITES products).">Bonded stores: té premium, licor, regalos (atención con marfil, jade, productos CITES).</li>
+                            <li data-es="Si el owner llega con criados / asistentes personales: visas individuales también." data-en="If the owner arrives with servants / personal assistants: individual visas too.">Si el owner llega con criados / asistentes personales: visas individuales también.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="T-24 HORAS" data-en="T-24 HOURS">T-24 HORAS</div>
+                        <h4 data-es="Cierre de plan de vuelo" data-en="Flight plan closure">Cierre de plan de vuelo</h4>
+                        <p data-es="FPL ICAO final + confirmación handling + slot aterrizaje isla o aeropuerto habilitado." data-en="Final ICAO FPL + handling confirmation + island or authorized airport landing slot.">FPL ICAO final + confirmación handling + slot aterrizaje isla o aeropuerto habilitado.</p>
+                        <ul>
+                            <li data-es="Transporte terrestre/marítimo sincronizado." data-en="Land/sea transport synchronized.">Transporte terrestre/marítimo sincronizado.</li>
+                            <li data-es="Confirmación intérprete cantonés / mandarín si el owner lo requiere (no es habitual; la mayoría habla inglés)." data-en="Confirmation of Cantonese / Mandarin interpreter if required (not usual; most speak English).">Confirmación intérprete cantonés / mandarín si el owner lo requiere (no es habitual; la mayoría habla inglés).</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="case">
+                <div class="hd">
+                    <div class="city"><span class="flag">🇵🇦</span> <span data-es="Isla La Porcada" data-en="Isla La Porcada">Isla La Porcada</span></div>
+                    <div class="meta" data-es="Pista Privada · Destino · GMT-5" data-en="Private Runway · Destination · GMT-5">Pista Privada · Destino · GMT-5</div>
+                </div>
+                <div class="bd">
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="D-DÍA · LLEGADA" data-en="D-DAY · ARRIVAL">D-DÍA · LLEGADA</div>
+                        <h4 data-es="Aterrizaje y Despacho Aduanal" data-en="Landing and Customs Dispatch">Aterrizaje y Despacho Aduanal</h4>
+                        <p data-es="Modelo A: aterrizaje en Panamá Pacífico (Howard), FBO Signature. Despacho en FBO. Traslado a isla en helicóptero." data-en="Model A: landing at Panamá Pacífico (Howard), FBO Signature. Dispatch at FBO. Transfer to island by helicopter."><strong>Modelo A:</strong> aterrizaje en Panamá Pacífico (Howard), FBO Signature. Despacho en FBO. Traslado a isla en helicóptero.</p>
+                        <p data-es="Modelo B: aterrizaje directo en la isla. Oficiales destacados ad hoc ese día, despacho in situ en 30–45 min." data-en="Model B: direct landing on the island. Officers posted ad hoc that day, on-site dispatch in 30–45 min."><strong>Modelo B:</strong> aterrizaje directo en la isla. Oficiales destacados ad hoc ese día, despacho in situ en 30–45 min.</p>
+                        <p data-es="Modelo C: aterrizaje directo, despacho en 15–20 min, oficiales permanentes." data-en="Model C: direct landing, dispatch in 15–20 min, permanent officers."><strong>Modelo C:</strong> aterrizaje directo, despacho en 15–20 min, oficiales permanentes.</p>
+                        <ul>
+                            <li data-es="Sellado de pasaportes HKSAR / RPC." data-en="Stamping of HKSAR / PRC passports.">Sellado de pasaportes HKSAR / RPC.</li>
+                            <li data-es="Atención: ciudadanos RPC pasan a control migratorio secundario en algunos países. En Panamá es estándar." data-en="Note: PRC citizens undergo secondary immigration control in some countries. In Panama it is standard.">Atención: ciudadanos RPC pasan a control migratorio secundario en algunos países. En Panamá es estándar.</li>
+                            <li data-es="Verificación de productos restringidos en equipaje (marfil, productos CITES, medicinas con sustancias controladas)." data-en="Verification of restricted products in luggage (ivory, CITES products, medicines with controlled substances).">Verificación de productos restringidos en equipaje (marfil, productos CITES, medicinas con sustancias controladas).</li>
+                            <li data-es="Pago tarifa AAC." data-en="AAC fee payment.">Pago tarifa AAC.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="D-DÍA · TRANSFER" data-en="D-DAY · TRANSFER">D-DÍA · TRANSFER</div>
+                        <h4 data-es="Recepción VIP en la pista" data-en="VIP reception at the runway">Recepción VIP en la pista</h4>
+                        <p data-es="Bajada del jet, transfer a villa o embarque heli. Conserje bilingüe cantonés-inglés-español." data-en="Disembarking from the jet, transfer to villa or helicopter boarding. Bilingual Cantonese-English-Spanish concierge.">Bajada del jet, transfer a villa o embarque heli. Conserje bilingüe cantonés-inglés-español.</p>
+                        <ul>
+                            <li data-es="Welcome kit: té Tieguanyin o Long Jing premium, frutas asiáticas, dim sum fresco." data-en="Welcome kit: premium Tieguanyin or Long Jing tea, Asian fruits, fresh dim sum.">Welcome kit: té Tieguanyin o Long Jing premium, frutas asiáticas, dim sum fresco.</li>
+                            <li data-es="Wi-Fi con VPN a Hong Kong (importante: clientes chinos esperan conectividad total con casa matriz)." data-en="Wi-Fi with VPN to Hong Kong (important: Chinese clients expect total connectivity with home base).">Wi-Fi con VPN a Hong Kong (importante: clientes chinos esperan conectividad total con casa matriz).</li>
+                            <li data-es="Seguridad privada armada, discreción máxima." data-en="Armed private security, maximum discretion.">Seguridad privada armada, discreción máxima.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="ESTADÍA" data-en="STAY">ESTADÍA</div>
+                        <h4 data-es="Permanencia del owner" data-en="Owner's stay">Permanencia del owner</h4>
+                        <p data-es="HKSAR passport: hasta 90 días visa-free, prorrogables a 180. RPC passport: 90 días con visa stamped, prorrogables." data-en="HKSAR passport: up to 90 days visa-free, renewable to 180. PRC passport: 90 days with stamped visa, renewable.">HKSAR passport: hasta 90 días visa-free, prorrogables a 180. RPC passport: 90 días con visa stamped, prorrogables.</p>
+                        <ul>
+                            <li data-es="Jet en hangar o plataforma estacionado." data-en="Jet parked in hangar or on apron.">Jet en hangar o plataforma estacionado.</li>
+                            <li data-es="Mantenimiento coordinado con técnico Gulfstream/Bombardier certificado regional." data-en="Maintenance coordinated with regional certified Gulfstream/Bombardier technician.">Mantenimiento coordinado con técnico Gulfstream/Bombardier certificado regional.</li>
+                            <li data-es="Tripulación: traslado a hotel 5★ ciudad, vuelos de retorno a HKG programados según rotación crew." data-en="Crew: transfer to 5★ city hotel, return flights to HKG scheduled per crew rotation.">Tripulación: traslado a hotel 5★ ciudad, vuelos de retorno a HKG programados según rotación crew.</li>
+                            <li data-es="Si owner solicita residencia vía inversión (Friendly Nations o Inversionista): gestionable en paralelo." data-en="If owner requests residency via investment (Friendly Nations or Investor): manageable in parallel.">Si owner solicita residencia vía inversión (Friendly Nations o Inversionista): gestionable en paralelo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase">
+                        <div class="ph-tag" data-es="SALIDA" data-en="DEPARTURE">SALIDA</div>
+                        <h4 data-es="Pre-aviso y zarpe internacional" data-en="Pre-notice and international departure">Pre-aviso y zarpe internacional</h4>
+                        <p data-es="48h antes, aviso al handling agent para slot + manifiesto salida. Cierre de bonded stores." data-en="48h before, notice to handling agent for slot + departure manifest. Closure of bonded stores.">48h antes, aviso al handling agent para slot + manifiesto salida. Cierre de bonded stores.</p>
+                        <ul>
+                            <li data-es="Sellado salida pasaportes." data-en="Passport departure stamp.">Sellado salida pasaportes.</li>
+                            <li data-es="Cierre manifiesto ANA." data-en="Closure of ANA manifest.">Cierre manifiesto ANA.</li>
+                            <li data-es="Tarifa AAC de salida." data-en="AAC departure fee.">Tarifa AAC de salida.</li>
+                            <li data-es="FPL ICAO de retorno + permisos FIR." data-en="ICAO return FPL + FIR permits.">FPL ICAO de retorno + permisos FIR.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <h4 data-es="Diferencia cultural operacional crítica" data-en="Critical operational cultural difference">Diferencia cultural operacional crítica</h4>
+            <p data-es="Clientes HKSAR y mainland China valoran extremadamente la conectividad digital con Hong Kong/China (acceso a WeChat, Alipay, banca china). Verifica con tu proveedor de Starlink/cobertura que el servicio permita acceso fluido a estos servicios — muchos sistemas de telecom están throttled o bloqueados en algunas redes del Pacífico. Ten plan B: redundancia con fibra o satélite AsiaSat." data-en="HKSAR and mainland China clients value digital connectivity with Hong Kong/China extremely highly (access to WeChat, Alipay, Chinese banking). Verify with your Starlink/coverage provider that the service allows fluid access to these services — many telecom systems are throttled or blocked on some Pacific networks. Have plan B: redundancy with fiber or AsiaSat satellite.">Clientes HKSAR y mainland China valoran extremadamente la conectividad digital con Hong Kong/China (acceso a WeChat, Alipay, banca china). Verifica con tu proveedor de Starlink/cobertura que el servicio permita acceso fluido a estos servicios — muchos sistemas de telecom están throttled o bloqueados en algunas redes del Pacífico. Ten plan B: redundancia con fibra o satélite AsiaSat.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ COMPARATIVA ============ -->
+<section id="comparativa">
+    <div class="wrap">
+        <h2 data-es="Comparativa Operativa · San Petersburgo vs Hong Kong" data-en="Operational Comparison · St. Petersburg vs Hong Kong">Comparativa Operativa · San Petersburgo vs Hong Kong</h2>
+        <p class="lead" data-es="Resumen de las diferencias críticas para tu planeamiento operativo y de marketing." data-en="Summary of critical differences for your operational and marketing planning.">Resumen de las diferencias críticas para tu planeamiento operativo y de marketing.</p>
+
+        <table class="cmp">
+            <thead>
+                <tr>
+                    <th data-es="Variable" data-en="Variable">Variable</th>
+                    <th data-es="San Petersburgo 🇷🇺" data-en="St. Petersburg 🇷🇺">San Petersburgo 🇷🇺</th>
+                    <th data-es="Hong Kong 🇭🇰" data-en="Hong Kong 🇭🇰">Hong Kong 🇭🇰</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong data-es="Visa Panamá" data-en="Panama Visa">Visa Panamá</strong></td><td data-es="Stamped visa (Moscú) o exención con visa USA/UE/UK vigente" data-en="Stamped visa (Moscow) or exemption with valid USA/EU/UK visa">Stamped visa (Moscú) o exención con visa USA/UE/UK vigente</td><td data-es="HKSAR visa-free 90 días; RPC visa stamped en Beijing/HK" data-en="HKSAR visa-free 90 days; PRC stamped visa in Beijing/HK">HKSAR visa-free 90 días; RPC visa stamped en Beijing/HK</td></tr>
+                <tr><td><strong data-es="KYC" data-en="KYC">KYC</strong></td><td data-es="Sanciones post-2022: control estricto OFAC/UE/OFSI" data-en="Post-2022 sanctions: strict OFAC/EU/OFSI control">Sanciones post-2022: control estricto OFAC/UE/OFSI</td><td data-es="Entity List US Commerce; verificación BO estándar" data-en="Entity List US Commerce; standard BO verification">Entity List US Commerce; verificación BO estándar</td></tr>
+                <tr><td><strong data-es="Ruta de vuelo típica" data-en="Typical flight route">Ruta de vuelo típica</strong></td><td data-es="Pacífico Sur (Turquía-NA-Atlántico), 13–16h con 1 escala" data-en="South Pacific (Turkey-NA-Atlantic), 13–16h with 1 stop">Pacífico Sur (Turquía-NA-Atlántico), 13–16h con 1 escala</td><td data-es="Pacífico Norte (Anchorage-Honolulu), 16–18h con 1–2 escalas" data-en="North Pacific (Anchorage-Honolulu), 16–18h with 1–2 stops">Pacífico Norte (Anchorage-Honolulu), 16–18h con 1–2 escalas</td></tr>
+                <tr><td><strong data-es="Permisos FIR críticos" data-en="Critical FIR permits">Permisos FIR críticos</strong></td><td data-es="Turkey, Egypt, Morocco, Portugal, Santa Maria, AAC" data-en="Turkey, Egypt, Morocco, Portugal, Santa Maria, AAC">Turkey, Egypt, Morocco, Portugal, Santa Maria, AAC</td><td data-es="FAA (US overflight + landing), Nav Canada, AAC" data-en="FAA (US overflight + landing), Nav Canada, AAC">FAA (US overflight + landing), Nav Canada, AAC</td></tr>
+                <tr><td><strong data-es="Idioma operativo" data-en="Operational language">Idioma operativo</strong></td><td data-es="Ruso + inglés; conserje bilingüe" data-en="Russian + English; bilingual concierge">Ruso + inglés; conserje bilingüe</td><td data-es="Cantonés / mandarín + inglés; conserje bilingüe" data-en="Cantonese / Mandarin + English; bilingual concierge">Cantonés / mandarín + inglés; conserje bilingüe</td></tr>
+                <tr><td><strong data-es="Catering esperado" data-en="Expected catering">Catering esperado</strong></td><td data-es="Caviar Beluga, vodka premium, cocina rusa/francesa" data-en="Beluga caviar, premium vodka, Russian/French cuisine">Caviar Beluga, vodka premium, cocina rusa/francesa</td><td data-es="Té premium, dim sum, cocina cantonesa" data-en="Premium tea, dim sum, Cantonese cuisine">Té premium, dim sum, cocina cantonesa</td></tr>
+                <tr><td><strong data-es="Cultura de servicio" data-en="Service culture">Cultura de servicio</strong></td><td data-es="Discreción absoluta, formalidad europea, vodka de cortesía" data-en="Absolute discretion, European formality, courtesy vodka">Discreción absoluta, formalidad europea, vodka de cortesía</td><td data-es="Protocolo de respeto jerárquico, feng shui en villa, té de cortesía" data-en="Hierarchical respect protocol, feng shui in villa, courtesy tea">Protocolo de respeto jerárquico, feng shui en villa, té de cortesía</td></tr>
+                <tr><td><strong data-es="Sensibilidad cultural" data-en="Cultural sensitivity">Sensibilidad cultural</strong></td><td data-es="Evitar referencias a conflicto Ucrania; tema tabú" data-en="Avoid references to Ukraine conflict; taboo topic">Evitar referencias a conflicto Ucrania; tema tabú</td><td data-es="Evitar temas Taiwán/Tíbet/Xinjiang; alta sensibilidad" data-en="Avoid Taiwan/Tibet/Xinjiang topics; high sensitivity">Evitar temas Taiwán/Tíbet/Xinjiang; alta sensibilidad</td></tr>
+                <tr><td><strong data-es="Bonded stores típicos" data-en="Typical bonded stores">Bonded stores típicos</strong></td><td data-es="Vodka, caviar, tabaco rusos" data-en="Vodka, caviar, Russian tobacco">Vodka, caviar, tabaco rusos</td><td data-es="Té, licor Baijiu, jade, marfil (prohibido CITES)" data-en="Tea, Baijiu liquor, jade, ivory (CITES banned)">Té, licor Baijiu, jade, marfil (prohibido CITES)</td></tr>
+                <tr><td><strong data-es="Tiempo stand-by jet" data-en="Jet stand-by time">Tiempo stand-by jet</strong></td><td data-es="3-5 días en isla, retorno ATP vía Europa" data-en="3-5 days on island, ATP return via Europe">3-5 días en isla, retorno ATP vía Europa</td><td data-es="5-10 días en isla, retorno vía Pacífico (más costoso posicionamiento)" data-en="5-10 days on island, return via Pacific (more expensive positioning)">5-10 días en isla, retorno vía Pacífico (más costoso posicionamiento)</td></tr>
+                <tr><td><strong data-es="Banca esperada" data-en="Expected banking">Banca esperada</strong></td><td data-es="Suiza, Liechtenstein, Dubai" data-en="Switzerland, Liechtenstein, Dubai">Suiza, Liechtenstein, Dubai</td><td data-es="Hong Kong, Singapur, Suiza" data-en="Hong Kong, Singapore, Switzerland">Hong Kong, Singapur, Suiza</td></tr>
+                <tr><td><strong data-es="Probabilidad visita recurrente" data-en="Likelihood of repeat visit">Probabilidad visita recurrente</strong></td><td data-es="Alta si hay exceso climático (escape invierno)" data-en="High if climatic excess (winter escape)">Alta si hay exceso climático (escape invierno)</td><td data-es="Media-alta, pico febrero (Año Nuevo lunar)" data-en="Medium-high, peak February (Lunar New Year)">Media-alta, pico febrero (Año Nuevo lunar)</td></tr>
+                <tr><td><strong data-es="Riesgo legal específico" data-en="Specific legal risk">Riesgo legal específico</strong></td><td data-es="Cambio repentino en listas sanciones; freeze de cuentas" data-en="Sudden change in sanctions lists; account freeze">Cambio repentino en listas sanciones; freeze de cuentas</td><td data-es="Controles cambio capital RPC; restricción salida divisas" data-en="PRC capital controls; currency exit restriction">Controles cambio capital RPC; restricción salida divisas</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- ============ ADUANA EN LA ISLA ============ -->
+<section id="aduana">
+    <div class="wrap">
+        <h2 data-es="Creación de Aduana en la Isla" data-en="Island Customs Creation">Creación de Aduana en la Isla</h2>
+        <p class="lead" data-es="Habilitación de la pista privada de La Porcada como Puesto de Control Fronterizo Auxiliar (Modelo C — habilitación permanente) o como Aeródromo con Autorización Ad-Hoc (Modelo B). La diferencia es operativa: en el Modelo B el oficial viaja a la isla solo cuando hay llegada programada; en el C, hay oficiales permanentes o on-call con respuesta en 2h." data-en="Enablement of La Porcada's private runway as an Auxiliary Border Control Post (Model C — permanent clearance) or as an Aerodrome with Ad-Hoc Authorization (Model B). The difference is operational: in Model B the officer travels to the island only when there is a scheduled arrival; in C, there are permanent or on-call officers with 2h response.">Habilitación de la pista privada de La Porcada como Puesto de Control Fronterizo Auxiliar (Modelo C — habilitación permanente) o como Aeródromo con Autorización Ad-Hoc (Modelo B). La diferencia es operativa: en el Modelo B el oficial viaja a la isla solo cuando hay llegada programada; en el C, hay oficiales permanentes o on-call con respuesta en 2h.</p>
+
+        <h3 data-es="Requisitos técnicos para habilitación" data-en="Technical requirements for clearance">Requisitos técnicos para habilitación</h3>
+        <div class="grid-3">
+            <div class="card">
+                <div class="tag" data-es="Infraestructura FBO" data-en="FBO Infrastructure">Infraestructura FBO</div>
+                <ul>
+                    <li data-es="Terminal VIP privado 60-100 m²" data-en="Private VIP terminal 60-100 m²">Terminal VIP privado 60-100 m²</li>
+                    <li data-es="Sala de espera segregada para oficiales" data-en="Segregated waiting room for officers">Sala de espera segregada para oficiales</li>
+                    <li data-es="Oficina aduanera con depósito fiscal (bonded warehouse) 25 m² seguros" data-en="Customs office with bonded warehouse 25 m² secured">Oficina aduanera con depósito fiscal (bonded warehouse) 25 m² seguros</li>
+                    <li data-es="Oficina migración con terminal sistema Migración 15 m²" data-en="Immigration office with Immigration system terminal 15 m²">Oficina migración con terminal sistema Migración 15 m²</li>
+                    <li data-es="Área cuarentena / inspección sanitaria 20 m²" data-en="Quarantine / health inspection area 20 m²">Área cuarentena / inspección sanitaria 20 m²</li>
+                    <li data-es="Hangar o posición techada para jet" data-en="Hangar or covered position for jet">Hangar o posición techada para jet</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="tag" data-es="Seguridad ISPS" data-en="ISPS Security">Seguridad ISPS</div>
+                <ul>
+                    <li data-es="Cerco perimetral pista y terminal" data-en="Perimeter fence runway and terminal">Cerco perimetral pista y terminal</li>
+                    <li data-es="CCTV 24/7 con grabación 90 días" data-en="24/7 CCTV with 90-day recording">CCTV 24/7 con grabación 90 días</li>
+                    <li data-es="Control acceso biométrico" data-en="Biometric access control">Control acceso biométrico</li>
+                    <li data-es="Guardia de seguridad armado permanente" data-en="Permanent armed security guard">Guardia de seguridad armado permanente</li>
+                    <li data-es="Plan de emergencia + simulacro semestral" data-en="Emergency plan + semi-annual drill">Plan de emergencia + simulacro semestral</li>
+                    <li data-es="Iluminación nocturna de plataforma" data-en="Night lighting of apron">Iluminación nocturna de plataforma</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="tag" data-es="Operacional" data-en="Operational">Operacional</div>
+                <ul>
+                    <li data-es="Pista 1,500-2,000m mínimo (midsize jets) o 2,500m+ (heavy jets)" data-en="Runway 1,500-2,000m minimum (midsize jets) or 2,500m+ (heavy jets)">Pista 1,500-2,000m mínimo (midsize jets) o 2,500m+ (heavy jets)</li>
+                    <li data-es="Superficie PCN homologada (asfalto/concreto)" data-en="Certified PCN surface (asphalt/concrete)">Superficie PCN homologada (asfalto/concreto)</li>
+                    <li data-es="Ayudas visuales: PAPI, baliza, luces umbral" data-en="Visual aids: PAPI, beacon, threshold lights">Ayudas visuales: PAPI, baliza, luces umbral</li>
+                    <li data-es="Radio y meteorológica (AWOS)" data-en="Radio and weather (AWOS)">Radio y meteorológica (AWOS)</li>
+                    <li data-es="Combustible Jet-A1 con truck dedicado" data-en="Jet-A1 fuel with dedicated truck">Combustible Jet-A1 con truck dedicado</li>
+                    <li data-es="Body truck agua potable + lav service" data-en="Potable water body truck + lav service">Body truck agua potable + lav service</li>
+                    <li data-es="Bomberos categoría Aero ARFF" data-en="ARFF category aero firefighters">Bomberos categoría Aero ARFF</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 data-es="Trámite administrativo" data-en="Administrative Process">Trámite administrativo</h3>
+        <div class="timeline">
+            <div class="tl-item">
+                <span class="time" data-es="MES 0" data-en="MONTH 0">MES 0</span>
+                <div class="tl-head"><h4 data-es="Constitución de la sociedad operadora" data-en="Incorporation of operating company">Constitución de la sociedad operadora</h4><span class="actor" data-es="Estudio legal" data-en="Law firm">Estudio legal</span></div>
+                <p data-es="Sociedad anónima panameña con objeto operación de aeródromo privado y servicios FBO. Registro Público + Patente Comercial + Aviso de Operaciones." data-en="Panamanian corporation with the purpose of private aerodrome operation and FBO services. Public Registry + Commercial License + Operations Notice.">Sociedad anónima panameña con objeto "operación de aeródromo privado y servicios FBO". Registro Público + Patente Comercial + Aviso de Operaciones.</p>
+            </div>
+            <div class="tl-item">
+                <span class="time" data-es="MES 1–3" data-en="MONTH 1–3">MES 1–3</span>
+                <div class="tl-head"><h4 data-es="Permiso de uso de suelo + ambiental" data-en="Land use + environmental permit">Permiso de uso de suelo + ambiental</h4><span class="actor" data-es="MiAmbiente + ANATI" data-en="MiAmbiente + ANATI">MiAmbiente + ANATI</span></div>
+                <p data-es="EIA Categoría II (operación aeronáutica en zona sensible). Estudio de ruido, fauna aviar (crítico: colisiones con aves), manglar circundante. 60–90 días." data-en="EIA Category II (aeronautical operation in sensitive area). Noise study, avian fauna (critical: bird strikes), surrounding mangrove. 60–90 days.">EIA Categoría II (operación aeronáutica en zona sensible). Estudio de ruido, fauna aviar (crítico: colisiones con aves), manglar circundante. 60–90 días.</p>
+            </div>
+            <div class="tl-item">
+                <span class="time" data-es="MES 3–9" data-en="MONTH 3–9">MES 3–9</span>
+                <div class="tl-head"><h4 data-es="Habilitación operacional AAC" data-en="AAC operational clearance">Habilitación operacional AAC</h4><span class="actor" data-es="AAC + DOT" data-en="AAC + DOT">AAC + DOT</span></div>
+                <p data-es="Plan maestro del aeródromo, diseño pista, manual de operaciones, plan de seguridad operacional, certificación jefe de aeródromo. Inspección física. Resolución de habilitación." data-en="Aerodrome master plan, runway design, operations manual, operational safety plan, aerodrome chief certification. Physical inspection. Clearance resolution.">Plan maestro del aeródromo, diseño pista, manual de operaciones, plan de seguridad operacional, certificación jefe de aeródromo. Inspección física. Resolución de habilitación.</p>
+            </div>
+            <div class="tl-item">
+                <span class="time" data-es="MES 6–12" data-en="MONTH 6–12">MES 6–12</span>
+                <div class="tl-head"><h4 data-es="Convenio ANA + Migración + Salud" data-en="ANA + Immigration + Health agreement">Convenio ANA + Migración + Salud</h4><span class="actor" data-es="ANA + Migración + MINSALUD" data-en="ANA + Immigration + MINSALUD">ANA + Migración + MINSALUD</span></div>
+                <p data-es="Convenio marco para operar como Puesto de Control Fronterizo Auxiliar. Definición de horario operativo (inicialmente L-V 8h-18h), personal destacado (permanente u on-call), sistema informático conectado." data-en="Framework agreement to operate as Auxiliary Border Control Post. Definition of operational schedule (initially M-F 8h-18h), posted personnel (permanent or on-call), connected IT system.">Convenio marco para operar como Puesto de Control Fronterizo Auxiliar. Definición de horario operativo (inicialmente L-V 8h-18h),personal destacado (permanente u on-call), sistema informático conectado.</p>
+            </div>
+            <div class="tl-item">
+                <span class="time" data-es="MES 9–15" data-en="MONTH 9–15">MES 9–15</span>
+                <div class="tl-head"><h4 data-es="Construcción FBO y oficinas" data-en="FBO and offices construction">Construcción FBO y oficinas</h4><span class="actor" data-es="Constructor local" data-en="Local builder">Constructor local</span></div>
+                <p data-es="Edificación terminal VIP, oficinas oficiales, depósito fiscal, hangar, plataforma, sistemas CCTV/acceso, hangar combustible. Aprobación ANA + AAC de planos finales." data-en="Construction of VIP terminal, official offices, bonded warehouse, hangar, apron, CCTV/access systems, fuel hangar. ANA + AAC approval of final plans.">Edificación terminal VIP, oficinas oficiales, depósito fiscal, hangar, plataforma, sistemas CCTV/acceso, hangar combustible. Aprobación ANA + AAC de planos finales.</p>
+            </div>
+            <div class="tl-item">
+                <span class="time" data-es="MES 12–18" data-en="MONTH 12–18">MES 12–18</span>
+                <div class="tl-head"><h4 data-es="Pruebas operacionales y certificación" data-en="Operational testing and certification">Pruebas operacionales y certificación</h4><span class="actor" data-es="AAC + ANA" data-en="AAC + ANA">AAC + ANA</span></div>
+                <p data-es="Simulacro de llegada internacional con jet de prueba. Verificación de cadena de custodia aduanera. Certificación final ISPS. Emisión de licencia de operación." data-en="International arrival drill with test jet. Verification of customs chain of custody. Final ISPS certification. Issuance of operating license.">Simulacro de llegada internacional con jet de prueba. Verificación de cadena de custodia aduanera. Certificación final ISPS. Emisión de licencia de operación.</p>
+            </div>
+            <div class="tl-item done">
+                <span class="time" data-es="MES 18–24" data-en="MONTH 18–24">MES 18–24</span>
+                <div class="tl-head"><h4 data-es="Habilitación oficial publicada en Gaceta" data-en="Official clearance published in Gazette">Habilitación oficial publicada en Gaceta</h4><span class="actor" data-es="Presidencia + Gaceta Oficial" data-en="Presidency + Official Gazette">Presidencia + Gaceta Oficial</span></div>
+                <p data-es="Decreto de Gabinete habilitando el aeródromo como puesto fronterizo auxiliar. A partir de su publicación, llegadas internacionales directas sin preaviso extendido." data-en="Cabinet Decree enabling the aerodrome as auxiliary border post. From its publication, direct international arrivals without extended advance notice.">Decreto de Gabinete habilitando el aeródromo como puesto fronterizo auxiliar. A partir de su publicación, llegadas internacionales directas sin preaviso extendido.</p>
+            </div>
+        </div>
+
+        <h3 data-es="Inversión estimada (Modelo C, habilitación completa)" data-en="Estimated investment (Model C, full clearance)">Inversión estimada (Modelo C, habilitación completa)</h3>
+        <table class="cmp cost-table">
+            <thead>
+                <tr>
+                    <th data-es="Componente" data-en="Component">Componente</th>
+                    <th class="num" data-es="Capex USD" data-en="Capex USD">Capex USD</th>
+                    <th class="num" data-es="Opex Anual USD" data-en="Annual Opex USD">Opex Anual USD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-es="Pista (mejoramiento / nueva construcción, 1,800m)" data-en="Runway (improvement / new construction, 1,800m)">Pista (mejoramiento / nueva construcción, 1,800m)</td><td class="num">1,500,000–2,500,000</td><td class="num">50,000</td></tr>
+                <tr><td data-es="Terminal VIP + oficinas oficiales (200 m² total)" data-en="VIP Terminal + official offices (200 m² total)">Terminal VIP + oficinas oficiales (200 m² total)</td><td class="num">250,000–400,000</td><td class="num">20,000</td></tr>
+                <tr><td data-es="Hangar jets (3 posiciones)" data-en="Jet hangar (3 positions)">Hangar jets (3 posiciones)</td><td class="num">600,000–1,000,000</td><td class="num">15,000</td></tr>
+                <tr><td data-es="Plataforma + sistemas de seguridad ISPS" data-en="Apron + ISPS security systems">Plataforma + sistemas de seguridad ISPS</td><td class="num">200,000–350,000</td><td class="num">25,000</td></tr>
+                <tr><td data-es="Sistemas comunicaciones + AWOS + PAPI" data-en="Communications systems + AWOS + PAPI">Sistemas comunicaciones + AWOS + PAPI</td><td class="num">150,000–250,000</td><td class="num">10,000</td></tr>
+                <tr><td data-es="Equipo ARFF (bomberos aero)" data-en="ARFF equipment (aero firefighters)">Equipo ARFF (bomberos aero)</td><td class="num">180,000–280,000</td><td class="num">20,000</td></tr>
+                <tr><td data-es="Combustible Jet-A1 tank + truck" data-en="Jet-A1 fuel tank + truck">Combustible Jet-A1 tank + truck</td><td class="num">200,000–300,000</td><td class="num">15,000</td></tr>
+                <tr><td data-es="Honorarios legales + permisos (EIA, AAC, ANA)" data-en="Legal fees + permits (EIA, AAC, ANA)">Honorarios legales + permisos (EIA, AAC, ANA)</td><td class="num">120,000–180,000</td><td class="num">—</td></tr>
+                <tr><td data-es="Personal directo (operador, jefe aeródromo, 3 staff)" data-en="Direct staff (operator, aerodrome chief, 3 staff)">Personal directo (operador, jefe aeródromo, 3 staff)</td><td class="num">—</td><td class="num">180,000</td></tr>
+                <tr><td data-es="Oficiales ANA + Migración (per diem o salario compartido)" data-en="ANA + Immigration officers (per diem or shared salary)">Oficiales ANA + Migración (per diem o salario compartido)</td><td class="num">—</td><td class="num">120,000</td></tr>
+                <tr><td data-es="Seguro operación + responsabilidad civil" data-en="Operations insurance + civil liability">Seguro operación + responsabilidad civil</td><td class="num">—</td><td class="num">80,000</td></tr>
+                <tr><td data-es="Mantenimiento + utilities" data-en="Maintenance + utilities">Mantenimiento + utilities</td><td class="num">—</td><td class="num">45,000</td></tr>
+                <tr style="background:rgba(212,180,131,0.05)"><td><strong data-es="TOTAL ORIENTATIVO" data-en="ESTIMATED TOTAL">TOTAL ORIENTATIVO</strong></td><td class="num"><strong>3,200,000–5,510,000</strong></td><td class="num"><strong>580,000</strong></td></tr>
+            </tbody>
+        </table>
+
+        <div class="callout">
+            <h4 data-es="Modelo B — Versión económica del mismo concepto" data-en="Model B — Economic version of the same concept">Modelo B — Versión económica del mismo concepto</h4>
+            <p data-es="Si el Modelo C te parece pesado para 5-6 jets, el Modelo B reduce el capex a $80k-$150k: habilitas pista privada nacional con FBO simple, y cada llegada internacional se tramita como vuelo charter internacional autorizado con preaviso de 72h y oficiales destacados ad-hoc. El opex queda en $100k-$200k/año. Muy competitivo para el segmento premium sin necesidad de operar 24/7." data-en="If Model C seems heavy for 5-6 jets, Model B reduces capex to $80k-$150k: you enable a national private runway with a simple FBO, and each international arrival is processed as an authorized international charter flight with 72h advance notice and ad-hoc posted officers. Opex is $100k-$200k/year. Very competitive for the premium segment without needing to operate 24/7.">Si el Modelo C te parece pesado para 5-6 jets, el Modelo B reduce el capex a $80k-$150k: habilitas pista privada nacional con FBO simple, y cada llegada internacional se tramita como "vuelo charter internacional autorizado" con preaviso de 72h y oficiales destacados ad-hoc. El opex queda en $100k-$200k/año. Muy competitivo para el segmento premium sin necesidad de operar 24/7.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CRONOGRAMA ============ -->
+<section id="cronograma">
+    <div class="wrap">
+        <h2 data-es="Cronograma de Implementación · 24 Meses" data-en="Implementation Timeline · 24 Months">Cronograma de Implementación · 24 Meses</h2>
+        <p class="lead" data-es="Ruta crítica para pasar del Modelo A (operativo hoy) al Modelo C (habilitación internacional permanente) en 24 meses, sin interrumpir la operación comercial." data-en="Critical path to move from Model A (operational today) to Model C (permanent international clearance) in 24 months, without interrupting commercial operations.">Ruta crítica para pasar del Modelo A (operativo hoy) al Modelo C (habilitación internacional permanente) en 24 meses, sin interrumpir la operación comercial.</p>
+
+        <div class="gantt">
+            <div class="gantt-row">
+                <div class="gantt-label" data-es="Modelo A · FBO en Howard" data-en="Model A · FBO at Howard">Modelo A · FBO en Howard</div>
+                <div class="gantt-bar-wrap"><div class="gantt-bar fin" style="left:0%;width:100%" data-es="Operativo inmediato · permanente" data-en="Immediate operational · permanent">Operativo inmediato · permanente</div></div>
+            </div>
+            <div class="gantt-row">
+                <div class="gantt-label" data-es="Constitución sociedad operadora" data-en="Operating company incorporation">Constitución sociedad operadora</div>
+                <div class="gantt-bar-wrap"><div class="gantt-bar" style="left:0%;width:5%">M0-M1</div></div>
+            </div>
+            <div class="gantt-row">
+                <div class="gantt-label" data-es="EIA + permiso suelo" data-en="EIA + land permit">EIA + permiso suelo</div>
+                <div class="gantt-bar-wrap"><div class="gantt-bar" style="left:4%;width:12%">M1-M3</div></div>
+            </div>
+            <div class="gantt-row">
+                <div class="gantt-label" data-es="Habilitación AAC pista" data-en="AAC runway clearance">Habilitación AAC pista</div>
+                <div class="gantt-bar-wrap"><div class="gantt-bar" style="left:12%;width:25%">M3-M9</div></div>
+            </div>
+            <div class="gantt-row">
+                <div class="gantt-label" data-es="Convenio ANA + Migración" data-en="ANA + Immigration agreement">Convenio ANA + Migración</div>
+                <div class="gantt-bar-wrap"><div class="gantt-bar alt" style="left:25%;width:25%">M6-M12</div></div>
+            </div>
+            <div class="gantt-row">
+                <div class="gantt-label" data-es="Construcción FBO + hangar" data-en="FBO + hangar construction">Construcción FBO + hangar</div>
+                <div class="gantt-bar-wrap"><div class="gantt-bar" style="left:38%;width:25%">M9-M15</div></div>
+            </div>
+            <div class="gantt-row">
+                <div class="gantt-label" data-es="Pruebas + certificación" data-en="Testing + certification">Pruebas + certificación</div>
+                <div class="gantt-bar-wrap"><div class="gantt-bar alt" style="left:50%;width:25%">M12-M18</div></div>
+            </div>
+            <div class="gantt-row">
+                <div class="gantt-label" data-es="Modelo B operando" data-en="Model B operating">Modelo B operando</div>
+                <div class="gantt-bar-wrap"><div class="gantt-bar fin" style="left:62%;width:38%" data-es="Ad-hoc internacional · permanente" data-en="Ad-hoc international · permanent">Ad-hoc internacional · permanente</div></div>
+            </div>
+            <div class="gantt-row">
+                <div class="gantt-label" data-es="Decreto Gabinete" data-en="Cabinet Decree">Decreto Gabinete</div>
+                <div class="gantt-bar-wrap"><div class="gantt-bar" style="left:75%;width:12%">M18-M21</div></div>
+            </div>
+            <div class="gantt-row">
+                <div class="gantt-label" data-es="Gaceta Oficial · Modelo C" data-en="Official Gazette · Model C">Gaceta Oficial · Modelo C</div>
+                <div class="gantt-bar-wrap"><div class="gantt-bar fin" style="left:83%;width:17%" data-es="Habilitación plena · permanente" data-en="Full clearance · permanent">Habilitación plena · permanente</div></div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <h4 data-es="Hito crítico" data-en="Critical milestone">Hito crítico</h4>
+            <p data-es="A partir del mes 12 (Modelo B operativo) ya puedes comercializar villas con el argumento de vuelo directo a la isla. El Modelo C (mes 18-24) es el upgrade que convierte el argumento en única pista privada internacional del Pacífico panameño, posicionamiento de marca que sostiene el precio premium de salida de las Beach Houses. Este hito no abre la puerta a un repricing: confirma el valor ya fijado en el lanzamiento." data-en="From month 12 (Model B operational) you can already market villas with the direct-to-island flight argument. Model C (month 18-24) is the upgrade that turns the argument into the only private international runway in the Panamanian Pacific, a brand positioning that supports the premium exit price of the Beach Houses. This milestone does not open the door to repricing: it confirms the value already set at launch.">A partir del <strong>mes 12 (Modelo B operativo)</strong> ya puedes comercializar villas con el argumento de "vuelo directo a la isla". El Modelo C (mes 18-24) es el upgrade que convierte el argumento en "única pista privada internacional del Pacífico panameño", posicionamiento de marca que sostiene el precio premium de salida de las Beach Houses. Este hito no abre la puerta a un repricing: confirma el valor ya fijado en el lanzamiento.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONTACTOS ============ -->
+<section id="contactos">
+    <div class="wrap">
+        <h2 data-es="Actores y Contactos Necesarios" data-en="Actors and Necessary Contacts">Actores y Contactos Necesarios</h2>
+        <p class="lead" data-es="Equipo operativo y aliados institucionales para arrancar el proyecto. Marca los que ya tienes y los que faltan por reclutar." data-en="Operational team and institutional allies to launch the project. Mark the ones you already have and those still to be recruited.">Equipo operativo y aliados institucionales para arrancar el proyecto. Marca los que ya tienes y los que faltan por reclutar.</p>
+
+        <div class="contacts">
+            <div class="contact">
+                <div class="org" data-es="Privado" data-en="Private">Privado</div>
+                <div class="role" data-es="Handling Agent / FBO Partner" data-en="Handling Agent / FBO Partner">Handling Agent / FBO Partner</div>
+                <div class="fn" data-es="Signature Aviation PTY o MAPIEX Tocumen. Retainer $30k-$60k/año. Tramita slots, overflight permits, eAPIS, caterers." data-en="Signature Aviation PTY or MAPIEX Tocumen. Retainer $30k-$60k/year. Handles slots, overflight permits, eAPIS, caterers.">Signature Aviation PTY o MAPIEX Tocumen. Retainer $30k-$60k/año. Tramita slots, overflight permits, eAPIS, caterers.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Privado" data-en="Private">Privado</div>
+                <div class="role" data-es="Estudio Legal Marítimo-Aéreo" data-en="Maritime-Aviation Law Firm">Estudio Legal Marítimo-Aéreo</div>
+                <div class="fn" data-es="Firma panameña con experiencia en aviación + aduanas + KYC sanciones. Ej: Morgan & Morgan, Arias & Muñoz, Castro & Palomino." data-en="Panamanian firm with experience in aviation + customs + sanctions KYC. E.g., Morgan & Morgan, Arias & Muñoz, Castro & Palomino.">Firma panameña con experiencia en aviación + aduanas + KYC sanciones. Ej: Morgan & Morgan, Arias & Muñoz, Castro & Palomino.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Privado" data-en="Private">Privado</div>
+                <div class="role" data-es="Operador Helicóptero" data-en="Helicopter Operator">Operador Helicóptero</div>
+                <div class="fn" data-es="Helipanamá, Heli Express o similar. AgustaWestland AW139 para 8 pax. Tarifa $3k-$5k/hora." data-en="Helipanamá, Heli Express or similar. AgustaWestland AW139 for 8 pax. Rate $3k-$5k/hour.">Helipanamá, Heli Express o similar. AgustaWestland AW139 para 8 pax. Tarifa $3k-$5k/hora.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Privado" data-en="Private">Privado</div>
+                <div class="role" data-es="Seguridad Privada Armada" data-en="Armed Private Security">Seguridad Privada Armada</div>
+                <div class="fn" data-es="Seguridad VIP (CSO Panamá, Mega Security). Personal ex-militar. Plan protección ejecutiva 24/7." data-en="VIP Security (CSO Panama, Mega Security). Ex-military personnel. 24/7 executive protection plan.">Seguridad VIP (CSO Panamá, Mega Security). Personal ex-militar. Plan protección ejecutiva 24/7.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Privado" data-en="Private">Privado</div>
+                <div class="role" data-es="Concierge Bilingüe" data-en="Bilingual Concierge">Concierge Bilingüe</div>
+                <div class="fn" data-es="Ruso + inglés + español; cantonés + mandarín + inglés + español. Perfiles con experiencia en hoteles 5★ o embajadas." data-en="Russian + English + Spanish; Cantonese + Mandarin + English + Spanish. Profiles with experience in 5★ hotels or embassies.">Ruso + inglés + español; cantonés + mandarín + inglés + español. Perfiles con experiencia en hoteles 5★ o embajadas.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Privado" data-en="Private">Privado</div>
+                <div class="role" data-es="Catering Gourmet Premium" data-en="Premium Gourmet Catering">Catering Gourmet Premium</div>
+                <div class="fn" data-es="Proveedor con capacidad importación diaria (caviar, wagyu, Krug). Alianzas con proveedores especializados de Panamá." data-en="Supplier with daily import capacity (caviar, wagyu, Krug). Alliances with specialized Panama suppliers.">Proveedor con capacidad importación diaria (caviar, wagyu, Krug). Alianzas con proveedores especializados de Panamá.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Privado" data-en="Private">Privado</div>
+                <div class="role" data-es="Técnico Mantenimiento Jet" data-en="Jet Maintenance Technician">Técnico Mantenimiento Jet</div>
+                <div class="fn" data-es="Certificación Gulfstream / Bombardier. Cotizar contrato on-call con factura por visita." data-en="Gulfstream / Bombardier certification. Quote on-call contract with per-visit invoicing.">Certificación Gulfstream / Bombardier. Cotizar contrato on-call con factura por visita.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Público" data-en="Public">Público</div>
+                <div class="role" data-es="AAC · Autoridad Aeronáutica Civil" data-en="AAC · Civil Aeronautics Authority">AAC · Autoridad Aeronáutica Civil</div>
+                <div class="fn" data-es="Habita pista, emite licencias operacionales. Dirección General de Aeronáutica Civil." data-en="Certifies runway, issues operating licenses. General Directorate of Civil Aeronautics.">Habita pista, emite licencias operacionales. Dirección General de Aeronáutica Civil.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Público" data-en="Public">Público</div>
+                <div class="role" data-es="ANA · Autoridad Nacional de Aduanas" data-en="ANA · National Customs Authority">ANA · Autoridad Nacional de Aduanas</div>
+                <div class="fn" data-es="Convenio de puesto fronterizo auxiliar. Designación depósito fiscal. Tarifas y procedimientos." data-en="Auxiliary border post agreement. Bonded warehouse designation. Fees and procedures.">Convenio de puesto fronterizo auxiliar. Designación depósito fiscal. Tarifas y procedimientos.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Público" data-en="Public">Público</div>
+                <div class="role" data-es="Migración · Servicio Nacional" data-en="Immigration · National Service">Migración · Servicio Nacional</div>
+                <div class="fn" data-es="Conexión al sistema migratorio. Permisos para oficiales destacados en tu FBO." data-en="Connection to the immigration system. Permits for officers posted at your FBO.">Conexión al sistema migratorio. Permisos para oficiales destacados en tu FBO.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Público" data-en="Public">Público</div>
+                <div class="role" data-es="Ministerio de Salud · Cuarentena Intl." data-en="Ministry of Health · Intl. Quarantine">Ministerio de Salud · Cuarentena Intl.</div>
+                <div class="fn" data-es="Inspección sanitaria internacional. Protocolo GMF (General Declaration / Maritime Health)." data-en="International sanitary inspection. GMF protocol (General Declaration / Maritime Health).">Inspección sanitaria internacional. Protocolo GMF (General Declaration / Maritime Health).</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Público" data-en="Public">Público</div>
+                <div class="role" data-es="ATP · Autoridad de Turismo Panamá" data-en="ATP · Panama Tourism Authority">ATP · Autoridad de Turismo Panamá</div>
+                <div class="fn" data-es="Sello Atracadero Turístico Decreto 4/2025. Acceso a beneficios fiscales y promoción." data-en="Tourist Dock Seal Decree 4/2025. Access to tax benefits and promotion.">Sello "Atracadero Turístico" Decreto 4/2025. Acceso a beneficios fiscales y promoción.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Público" data-en="Public">Público</div>
+                <div class="role" data-es="MiAmbiente" data-en="MiAmbiente">MiAmbiente</div>
+                <div class="fn" data-es="EIA Categoría II. Manejo integrado zona costera. Manglar circundante." data-en="EIA Category II. Integrated coastal zone management. Surrounding mangrove.">EIA Categoría II. Manejo integrado zona costera. Manglar circundante.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Público" data-en="Public">Público</div>
+                <div class="role" data-es="Senan · Servicio Nacional Aeronaval" data-en="Senan · National Aeronaval Service">Senan · Servicio Nacional Aeronaval</div>
+                <div class="fn" data-es="Seguridad aeroportuaria. SAR (Search & Rescue) en caso de incidente." data-en="Airport security. SAR (Search & Rescue) in case of incident.">Seguridad aeroportuaria. SAR (Search & Rescue) en caso de incidente.</div>
+            </div>
+            <div class="contact">
+                <div class="org" data-es="Público" data-en="Public">Público</div>
+                <div class="role" data-es="ACP · Canal de Panamá" data-en="ACP · Panama Canal">ACP · Canal de Panamá</div>
+                <div class="fn" data-es="Solo si llegadas combinadas con yates que transitan el Canal." data-en="Only if arrivals combined with yachts transiting the Canal.">Solo si llegadas combinadas con yates que transitan el Canal.</div>
+            </div>
+        </div>
+
+        <div class="callout warn">
+            <h4 data-es="Acción inmediata sugerida" data-en="Suggested immediate action">Acción inmediata sugerida</h4>
+            <p data-es="Antes de avanzar con construcción o inversión mayor, agenda 3 reuniones exploratorias en Ciudad de Panamá: (1) AAC Dirección de Aeródromos, (2) ANA Departamento de Regímenes Aduaneros, (3) ATP Departamento de Turismo Náutico. Te dan el veredicto de viabilidad política del proyecto en 30 días. Sin su visto bueno, no avances." data-en="Before advancing with construction or major investment, schedule 3 exploratory meetings in Panama City: (1) AAC Aerodromes Directorate, (2) ANA Customs Regimes Department, (3) ATP Nautical Tourism Department. They give you the political viability verdict of the project in 30 days. Without their approval, do not proceed.">Antes de avanzar con construcción o inversión mayor, agenda <strong>3 reuniones exploratorias en Ciudad de Panamá</strong>: (1) AAC Dirección de Aeródromos, (2) ANA Departamento de Regímenes Aduaneros, (3) ATP Departamento de Turismo Náutico. Te dan el veredicto de viabilidad política del proyecto en 30 días. Sin su visto bueno, no avances.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+    <div class="wrap">
+        <img src="images/ECORESORT.PNG" alt="EcoResort La Porcada" class="eco-logo" onerror="this.style.display='none'">
+        <div class="sig" data-es="EcoResort La Porcada" data-en="EcoResort La Porcada">EcoResort La Porcada</div>
+        <div class="tagline" data-es="by Takyma Investment Pioneer" data-en="by Takyma Investment Pioneer">by Takyma Investment Pioneer</div>
+        <div class="copyright">
+            © 2026 <strong>EcoResort La Porcada</strong> by <strong>Takyma Investment Pioneer</strong>
+            <br><span data-es="Todos los derechos reservados · Documento operativo confidencial" data-en="All rights reserved · Confidential operational document">Todos los derechos reservados · Documento operativo confidencial</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    let currentLang = 'ES';
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'ES' ? 'EN' : 'ES';
+        const btn = document.getElementById('langBtn');
+        btn.innerText = currentLang === 'ES' ? '🌐 English' : '🌐 Español';
+        document.documentElement.lang = currentLang.toLowerCase();
+
+        const elements = document.querySelectorAll('[data-es][data-en]');
+        elements.forEach(el => {
+            const value = currentLang === 'ES' ? el.getAttribute('data-es') : el.getAttribute('data-en');
+            if (value !== null) {
+                // Preserve inline <strong> tags by setting innerHTML
+                if (value.includes('<')) {
+                    el.innerHTML = value;
+                } else {
+                    el.innerText = value;
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
